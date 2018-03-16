@@ -185,7 +185,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C/C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Others/">Others</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Raspberry-Pi/">Raspberry Pi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C/C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Others/">Others</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Raspberry-Pi/">Raspberry Pi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a></li></ul>
                     </div>
                 </section>
                 
@@ -293,9 +293,9 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="JavaWeb作业"><a href="#JavaWeb作业" class="headerlink" title="JavaWeb作业"></a>JavaWeb作业</h2><h3 id="基于"><a href="#基于" class="headerlink" title="基于"></a>基于</h3><pre><code>* hexo
-* gitpages
-* markdown
+        <h1 id="JavaWeb作业"><a href="#JavaWeb作业" class="headerlink" title="JavaWeb作业"></a>JavaWeb作业</h1><h2 id="基于"><a href="#基于" class="headerlink" title="基于"></a>基于</h2><pre><code>1.hexo
+2.gitpages
+3.markdown
 </code></pre>
       
     </div>
@@ -309,6 +309,559 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Others/">Others</a></li></ul>
     </div>
 
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据结构-树" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/05/01/数据结构-树/" class="article-date">
+      <time datetime="2017-05-01T07:56:10.000Z" itemprop="datePublished">2017-05-01</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/01/数据结构-树/">数据结构-树</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="WIKI"><a href="#WIKI" class="headerlink" title="WIKI"></a>WIKI</h2><blockquote>
+<p>在计算机科学中，树（英语：tree）是一种抽象数据类型（ADT）或是实作这种抽象数据类型的数据结构，用来模拟具有树状结构性质的数据集合。它是由<br>n（n&gt;=1）个有限节点组成一个具有层次关系的集合。把它叫做“树”是因为它看起来像一棵倒挂的树，也就是说它是根朝上，而叶朝下的。它具有以下的特点：</p>
+<blockquote>
+<p>1.每个节点有零个或多个子节点<br>2.没有父节点的节点称为根节点<br>3.每一个非根节点有且只有一个父节点<br>4.除了根节点外，每个子节点可以分为多个不相交的子树 </p>
+</blockquote>
+</blockquote>
+<p><img src="http://op9lonk4p.bkt.clouddn.com/tree.png" alt="tree"></p>
+<hr>
+<h2 id="术语："><a href="#术语：" class="headerlink" title="术语："></a>术语：</h2><blockquote>
+<p>节点的度：一个节点含有的子树的个数称为该节点的度；<br>树的度：一棵树中，最大的节点的度称为树的度；<br>叶节点或终端节点：度为零的节点；<br>非终端节点或分支节点：度不为零的节点；<br>父亲节点或父节点：若一个节点含有子节点，则这个节点称为其子节点的父节点；<br>孩子节点或子节点：一个节点含有的子树的根节点称为该节点的子节点；<br>兄弟节点：具有相同父节点的节点互称为兄弟节点；<br>节点的层次：从根开始定义起，根为第1层，根的子节点为第2层，以此类推；<br>树的高度或深度：树中节点的最大层次；<br>堂兄弟节点：父节点在同一层的节点互为堂兄弟；<br>节点的祖先：从根到该节点所经分支上的所有节点；<br>子孙：以某节点为根的子树中任一节点都称为该节点的子孙。<br>森林：由m（m&gt;=0）棵互不相交的树的集合称为森林；</p>
+</blockquote>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-回溯算法与八皇后问题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/04/06/回溯算法与八皇后问题/" class="article-date">
+      <time datetime="2017-04-06T06:27:53.000Z" itemprop="datePublished">2017-04-06</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/06/回溯算法与八皇后问题/">回溯算法与八皇后问题</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="回溯法、八皇后问题-–-wikipedia"><a href="#回溯法、八皇后问题-–-wikipedia" class="headerlink" title="回溯法、八皇后问题  – wikipedia"></a>回溯法、八皇后问题  – wikipedia</h2><h3 id="回溯法"><a href="#回溯法" class="headerlink" title="回溯法"></a>回溯法</h3><blockquote>
+<p>回溯法（英语：backtracking）是暴力搜寻法中的一种。</p>
+</blockquote>
+<blockquote>
+<p>对于某些计算问题而言，回溯法是一种可以找出所有（或一部分）解的一般性算法，尤其适用于约束满足问题（在解决约束满足问题时，我们逐步构造更多的候选解，并且在确定某一部分候选解不可能补全成正确解之后放弃继续搜索这个部分候选解本身及其可以拓展出的子候选解，转而测试其他的部分候选解）。<br>在经典的教科书中，八皇后问题展示了回溯法的用例。（八皇后问题是在标准国际象棋棋盘中寻找八个皇后的所有分布，使得没有一个皇后能攻击到另外一个。）<br>回溯法采用试错的思想，它尝试分步的去解决一个问题。在分步解决问题的过程中，当它通过尝试发现现有的分步答案不能得到有效的正确的解答的时候，它将取消上一步甚至是上几步的计算，再通过其它的可能的分步解答再次尝试寻找问题的答案。回溯法通常用最简单的递归方法来实现，在反复重复上述的步骤后可能出现两种情况：<br>找到一个可能存在的正确的答案<br>在尝试了所有可能的分步方法后宣告该问题没有答案<br>在最坏的情况下，回溯法会导致一次复杂度为指数时间的计算。</p>
+</blockquote>
+<hr>
+<h3 id="八皇后问题"><a href="#八皇后问题" class="headerlink" title="八皇后问题"></a>八皇后问题</h3><blockquote>
+<p>八皇后问题是一个以国际象棋为背景的问题：如何能够在8×8的国际象棋棋盘上放置八个皇后，使得任何一个皇后都无法直接吃掉其他的皇后？为了达到此目的，任两个皇后都不能处于同一条横行、纵行或斜线上。八皇后问题可以推广为更一般的n皇后摆放问题：这时棋盘的大小变为n×n，而皇后个数也变成n。当且仅当n = 1或n ≥ 4时问题有解。</p>
+</blockquote>
+<hr>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2017/04/06/回溯算法与八皇后问题/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-栈的应用-表达式求值" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/04/04/栈的应用-表达式求值/" class="article-date">
+      <time datetime="2017-04-04T02:13:42.000Z" itemprop="datePublished">2017-04-04</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/04/栈的应用-表达式求值/">栈的应用-表达式求值</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><p>关于栈的介绍，请移步<a href="http://blog.imcoder.xyz/2016/11/17/data_structure_2/" target="_blank" rel="noopener">数据结构二</a> </p>
+<h2 id="前缀、中缀、后缀表达式"><a href="#前缀、中缀、后缀表达式" class="headerlink" title="前缀、中缀、后缀表达式"></a>前缀、中缀、后缀表达式</h2><p>WIKIpedia：</p>
+<blockquote>
+<p><a href="https://zh.wikipedia.org/wiki/%E6%B3%A2%E5%85%B0%E8%A1%A8%E7%A4%BA%E6%B3%95" target="_blank" rel="noopener">前缀表达式</a><br>波兰表示法（Polish notation，或波兰记法），是一种逻辑、算术和代数表示方法，其特点是操作符置于操作数的前面，因此也称做前缀表示法。如果操作符的元数（arity）是固定的，则语法上不需要括号仍然能被无歧义地解析。波兰记法是波兰数学家扬·武卡谢维奇1920年代引入的，用于简化命题逻辑。<br>例如 5 - 6 <em> 7 的前缀表达式为 - 5 6 </em> 7<br>与逆波兰表示法不同，前缀表达式基本没有在商业计算器中使用过，但是其体系经常在编译器构造的概念教学中首先使用。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p><a href="https://zh.wikipedia.org/wiki/%E4%B8%AD%E7%BC%80%E8%A1%A8%E7%A4%BA%E6%B3%95" target="_blank" rel="noopener">中缀表达式</a><br>是一个通用的算术或逻辑公式表示方法， 操作符是以中缀形式处于操作数的中间（例：3 + 4）。与前缀表达式（例：+ 3 4）或后缀表达式（例：3 4 +）相比，中&gt;缀表达式不容易被计算机解析，但仍被许多程序语言使用，因为它符合人们的普遍用法。<br>与前缀或后缀记法不同的是，中缀记法中括号是必需的。计算过程中必须用括号将操作符和对应的操作数括起来，用于指示运算的次序。<br>正因为中缀表达式不便于计算机求值，所以一般情况下中缀表达式会转换成后缀表达式后再进行求值。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p><a href="https://zh.wikipedia.org/wiki/%E9%80%86%E6%B3%A2%E5%85%B0%E8%A1%A8%E7%A4%BA%E6%B3%95" target="_blank" rel="noopener">后缀表达式</a><br>逆波兰表示法（Reverse Polish notation，RPN，或逆波兰记法），是一种是由波兰数学家扬·武卡谢维奇1920年引入的数学表达式方式，在逆波兰记法中，所有操作符置于操作数的后面，因此也被称为后缀表示法。逆波兰记法不需要括号来标识操作符的优先级。<br>在1960和1970年代，逆波兰记法广泛地被用于台式计算器，因此也在普通公众（工程、商业和金融领域）中使用。</p>
+</blockquote>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2017/04/04/栈的应用-表达式求值/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-博客迁移至Hexo" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/02/02/博客迁移至Hexo/" class="article-date">
+      <time datetime="2017-02-02T13:34:30.000Z" itemprop="datePublished">2017-02-02</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/02/博客迁移至Hexo/">博客迁移至Hexo</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>经过一番折腾，个人博客已由原来自己搭建的小站迁移到了Hexo.<br>挺漂亮的.</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Others/">Others</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2016总结" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/12/31/2016总结/" class="article-date">
+      <time datetime="2016-12-30T20:20:17.000Z" itemprop="datePublished">2016-12-31</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/31/2016总结/">2016总结</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <blockquote>
+<p>2016尾声已至，踏着尾声匆匆忙忙地总结一下即将结束的一年。<br>鬼知道这一年我都经历了什么，好像很多，也好像平淡无奇.<br>总结下来，大体有 工作学习、自己的一些改变、遇到的人和事</p>
+</blockquote>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Others/">Others</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2016/12/31/2016总结/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-POJ-称硬币" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/12/20/POJ-称硬币/" class="article-date">
+      <time datetime="2016-12-20T05:08:48.000Z" itemprop="datePublished">2016-12-20</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/20/POJ-称硬币/">POJ1013--Counterfeit Dollar(称硬币)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>题目出自POJ，链接：<a href="http://poj.org/problem?id=1013" target="_blank" rel="noopener">http://poj.org/problem?id=1013</a></p>
+<p>题目：</p>
+<blockquote>
+<p>赛利有12枚银币。其中有11枚真币和1枚假币。假币看起来和真币没有区别，但是重量不同。 但赛利不知道假币比真币轻还是重。于是他向 朋友借了一架天平。朋友希望赛利称三次就能找出假币并且确定假币是轻是重。例如:如果赛利用天平称两枚硬币，发现天平平衡，说明两 枚都是真的。如果赛利用一枚真币与另一枚银 币比较，发现它比真币轻或重，说明它是假 币。经过精心安排每次的称量，赛利保证在称 三次后确定假币。</p>
+</blockquote>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2016/12/20/POJ-称硬币/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-数据结构-翻转二叉树" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/12/12/数据结构-翻转二叉树/" class="article-date">
+      <time datetime="2016-12-12T06:12:10.000Z" itemprop="datePublished">2016-12-12</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/12/数据结构-翻转二叉树/">数据结构-翻转二叉树</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>故事是这样的：<br>Homebrew 的作者 Max Howell 在 twitter 上发表了如下一内容</p>
+<p>Google: 90% of our engineers use the software you wrote (Homebrew), but you can’t invert a binary tree on a whiteboard so fuck off.</p>
+<p>大意是，Max Howell 去 Google 面试，面试官说：虽然在 Google 有 90% 的工程师用你写的 Homebrew，但是你居然不能在白板上写出翻转二叉树的代码，所以滚蛋吧。</p>
+<p>题目参考Leetcode中的<a href="https://leetcode.com/problems/invert-binary-tree/" target="_blank" rel="noopener">invert Binary Tree</a></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2016/12/12/数据结构-翻转二叉树/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Redis数据类型及抽象概念" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/18/Redis数据类型及抽象概念/" class="article-date">
+      <time datetime="2016-11-18T09:04:10.000Z" itemprop="datePublished">2016-11-18</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/18/Redis数据类型及抽象概念/">Redis数据类型及抽象概念【译】</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>原文:<a href="http://redis.io/topics/data-types-intro" target="_blank" rel="noopener">An introduction to Redis data types and abstractions</a><br>Redis不是简单地通过键-值对来存储的数据库，事实上它是一个数据结构服务器，它支持多种数据值。这意味着，在传统的键-值存储中你会把字符串的键和字符串的值联系起来，但是对于Redis，它的值将不仅仅局限与简单的字符串，而是能容纳更加复杂的数据结构。以下是这篇文章将逐一讲解的一系列Redis能支持的数据结构。</p>
+<pre><code>* 二进制安全的字符串(Binary-safe strings.)
+* 列表(Lists): 根据插入顺序排列的字符串元素的集合.它们通常是链表(linked lists).
+* 集合(Set): 元素唯一的、乱序的字符串集合.
+* 有序集合(Sorted sets): 与集合(Sets)类似，但是每个字符串元素将会与一个被称为score的浮点值联系起来.这些元素总是会根据自身的score排序， 因此不同于集合，有序集合可以检索某一范围内的元素(例如你可能要求：给我最上面10个元素，或者最下面的10个元素).
+* 哈希(Hashes): 由字段和相关连的值组成的映射表.字段和值都是字符串类型.它跟Ruby、Python中的哈希非常相似.
+* 位数组(Bit arrays)(或是简单的位图 Bit maps): 它可以使用一些特别的命令把字符串当成二进制位数组来操作:你可以设置或清除某一个位，计算所有值为1的位的个数，找到第一个被设置或者尚未被设置的位等一系列命令.
+* HyperLogLogs： 这是一种基于概率的数据结构，目的在于估计集合的基数.别害怕，它实际上没有看起来那么难... 稍后请参考本文的HyperLogLogs章节.
+</code></pre>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redis/">Redis</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2016/11/18/Redis数据类型及抽象概念/#more">阅读全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -391,528 +944,9 @@
 
 
   
-    <article id="post-java数据结构基础" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/11/11/java数据结构基础/" class="article-date">
-      <time datetime="2016-11-11T05:35:25.000Z" itemprop="datePublished">2016-11-11</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/11/java数据结构基础/">(转)java数据结构基础</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="一、数据结构概念"><a href="#一、数据结构概念" class="headerlink" title="一、数据结构概念"></a>一、数据结构概念</h3><p>用我的理解，数据结构包含数据和结构，通俗一点就是将数据按照一定的结构组合起来，不同的组合方式会有不同的效率，使用不同的场景，如此而已。比如我们最常用的数组，就是一种数据结构，有独特的承载数据的方式，按顺序排列，其特点就是你可以根据下标快速查找元素，但是因为在数组中插入和删除元素会有其它元素较大幅度的移动，所以会带来较多的消耗，所以因为这种特点，使得数组适合：查询比较频繁，增、删比较少的情况，这就是数据结构的概念。数据结构包括两大类：线性结构和非线性结构，线性结构包括：数组、链表、队列、栈等，非线性结构包括树、图、表等及衍生类结构。本章我们先讲解线性结构，主要从数组、链表、队列、栈方面进行讨论，非线性数据结构在后面会继续讲解。</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2016/11/11/java数据结构基础/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构-一" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/11/11/数据结构-一/" class="article-date">
-      <time datetime="2016-11-11T02:42:35.000Z" itemprop="datePublished">2016-11-11</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/11/数据结构-一/">数据结构-一</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>算法和数据结构是计算机科学中两个不能分割的部分，优秀的算法实现通常离不开优秀的数据结构。</p>
-<p>WIKI:在计算机科学中，数据结构（data structure）是计算机中存储、组织数据的方式。<br>数据结构意味着接口或封装：一个数据结构可被视为两个函数之间的接口，或者是由数据类型联合组成的存储内容的访问方法封装。<br>大多数数据结构都由数列、记录、可辨识联合、引用等基本类型构成。举例而言，可为空的引用（nullable reference）是引用与可辨识联合的结合体，而最简单的链式结构链表则是由记录与可空引用构成。</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2016/11/11/数据结构-一/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-AlgorithmAnalysis" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/11/07/AlgorithmAnalysis/" class="article-date">
-      <time datetime="2016-11-07T02:16:06.000Z" itemprop="datePublished">2016-11-07</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/07/AlgorithmAnalysis/">Algorithm Analysis</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>算法是为求解一个问题需要遵循的、被清楚指定的简单指令的集合。对于一个问题，一旦某种算法给定并且以某种方式被确定是正确的，那么重要的一步就是确定算法将需要多少诸如时间或空间等资源的问题。<br>在分析一个实际问题时，答案取决于许多因素，比如所使用的计算机性能、被处理的数据的性质和完成任务所使用的程序（实现了某种算法），这些因素都会产生大量需要分析的信息。</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2016/11/07/AlgorithmAnalysis/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-算法-排序" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/10/29/算法-排序/" class="article-date">
-      <time datetime="2016-10-29T03:04:24.000Z" itemprop="datePublished">2016-10-29</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/29/算法-排序/">算法(排序)</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>虽然排序算法是一个简单的问题，但是从计算机科学发展以来，在此问题上已经有大量的研究。排序在在商业数据处理和现代科学计算中有重要地位。排序算法常常是解决问题的第一步，好的排序算法是很多问题解决的前提。学习排序算法有助于理解比较算法性能的方法，类似的技术也能有效解决其他类型的问题(问题的归约)。</p>
-<p>参考书籍：《算法(第4版)》<br>扩展库：从《算法(第4版)》官网下载 <a href="http://algs4.cs.princeton.edu/code/" target="_blank" rel="noopener">http://algs4.cs.princeton.edu/code/</a></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2016/10/29/算法-排序/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-ThinkInC" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/10/15/ThinkInC/" class="article-date">
-      <time datetime="2016-10-15T02:28:30.000Z" itemprop="datePublished">2016-10-15</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/15/ThinkInC/">Thinking in C</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h1 id="Thinking-in-C"><a href="#Thinking-in-C" class="headerlink" title="Thinking in C"></a>Thinking in C</h1><p>为了更好地学习数据结构和算法，花了几天时间复习了一遍C语言。把原来没有理解透彻的和已经快要忘记的一些知识点记录下来，作为复习的总结，也方便以后参考。</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-C/">C/C++</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2016/10/15/ThinkInC/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-ThinkInPython" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/10/05/ThinkInPython/" class="article-date">
-      <time datetime="2016-10-05T07:07:23.000Z" itemprop="datePublished">2016-10-05</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/05/ThinkInPython/">Think in Python</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>趁着十一假期，将Python复习了一遍，重新看了一遍《python核心编程》，把原来不太清楚的或者被忽略的一些盲点难点再次理解了一遍，总结如下。</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2016/10/05/ThinkInPython/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-JAVA学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/09/28/JAVA学习笔记/" class="article-date">
-      <time datetime="2016-09-28T08:07:54.000Z" itemprop="datePublished">2016-09-28</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/28/JAVA学习笔记/">JAVA学习笔记</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="JAVA学习笔记"><a href="#JAVA学习笔记" class="headerlink" title="JAVA学习笔记"></a>JAVA学习笔记</h2><h3 id="I-概述："><a href="#I-概述：" class="headerlink" title="I.概述："></a>I.概述：</h3><blockquote>
-<p>八月中旬开始正式学习java，到现在学了有一个多月了.学习Java这门语言的主要想多学一门语言，做一些有意思的事情， 同时也在于它不仅任然是目前最为流行的一门编程语言之一，也因为它足够成熟，有强大的技术支持等诸多原因。</p>
-</blockquote>
-<blockquote>
-<p>这一个多月的时间里，前期主要在看机械工业出版社的《Java语言程序设计》，很基础的一本书，也容易懂，后期看完这本基础书后开始看《Java编程思想》，写得更加深入一些，目前还没看完，然后稍微了解了一些JVM的知识，最近又花了几天时间把《Java语言程序设计》再温习了一边，把原来不太懂的地方再思考了一边。</p>
-</blockquote>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JAVA/">JAVA</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2016/09/28/JAVA学习笔记/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-docker笔记" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/09/06/docker笔记/" class="article-date">
-      <time datetime="2016-09-06T06:26:59.000Z" itemprop="datePublished">2016-09-06</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/06/docker笔记/">docker笔记</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="Docker-笔记"><a href="#Docker-笔记" class="headerlink" title="Docker 笔记"></a>Docker 笔记</h2><p>简介:<br>Docker是基于Linux 64bit下的一个轻量级的开源应用容器引擎。<br>Docker 是一个开源项目，诞生于 2013 年初，最初是 dotCloud 公司内部的一个业余项目。它基于 Google 公司推出的 Go 语言实现。 项目后来加入了 Linux 基金会，遵从了 Apache 2.0 协议，项目代码在 GitHub 上进行维护。<br>Docker容器除了运行其中应用外，基本不消耗额外的系统资源，使得应用的性能很高，同时系统的开销尽量小。相比于传统虚拟机，docker容器占用的资源非常少，启动速度也非常快。</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2016/09/06/docker笔记/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 </div>
