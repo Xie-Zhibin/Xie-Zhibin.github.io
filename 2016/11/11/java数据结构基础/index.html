@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="siliconx" />
+
+
+
+<meta name="description" content="一、数据结构概念用我的理解，数据结构包含数据和结构，通俗一点就是将数据按照一定的结构组合起来，不同的组合方式会有不同的效率，使用不同的场景，如此而已。比如我们最常用的数组，就是一种数据结构，有独特的承载数据的方式，按顺序排列，其特点就是你可以根据下标快速查找元素，但是因为在数组中插入和删除元素会有其它元素较大幅度的移动，所以会带来较多的消耗，所以因为这种特点，使得数组适合：查询比较频繁，增、删比较">
+<meta name="keywords" content="Data Structure">
+<meta property="og:type" content="article">
+<meta property="og:title" content="(转)java数据结构基础">
+<meta property="og:url" content="http://blog.siliconx.xyz/2016/11/11/java数据结构基础/index.html">
+<meta property="og:site_name" content="siliconx&#39;s blog">
+<meta property="og:description" content="一、数据结构概念用我的理解，数据结构包含数据和结构，通俗一点就是将数据按照一定的结构组合起来，不同的组合方式会有不同的效率，使用不同的场景，如此而已。比如我们最常用的数组，就是一种数据结构，有独特的承载数据的方式，按顺序排列，其特点就是你可以根据下标快速查找元素，但是因为在数组中插入和删除元素会有其它元素较大幅度的移动，所以会带来较多的消耗，所以因为这种特点，使得数组适合：查询比较频繁，增、删比较">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-16T09:05:46.912Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(转)java数据结构基础">
+<meta name="twitter:description" content="一、数据结构概念用我的理解，数据结构包含数据和结构，通俗一点就是将数据按照一定的结构组合起来，不同的组合方式会有不同的效率，使用不同的场景，如此而已。比如我们最常用的数组，就是一种数据结构，有独特的承载数据的方式，按顺序排列，其特点就是你可以根据下标快速查找元素，但是因为在数组中插入和删除元素会有其它元素较大幅度的移动，所以会带来较多的消耗，所以因为这种特点，使得数组适合：查询比较频繁，增、删比较">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="siliconx&#39;s blog" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>(转)java数据结构基础 | siliconx&#39;s blog</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: false
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">siliconx</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">pursuing...</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="http://resume.siliconx.xyz/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="siliconx:siliconx@163.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/siliconx" title="GitHub"></a>
+                            
+                                <a class="fa 知乎" href="https://www.zhihu.com/people/imcoder.xyz/activities" title="知乎"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C/C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Others/">Others</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Raspberry-Pi/">Raspberry Pi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">计科人</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">siliconx</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">siliconx</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">pursuing...</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="http://resume.siliconx.xyz/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="siliconx:siliconx@163.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/siliconx" title="GitHub"></a>
+                            
+                                <a class="fa 知乎" target="_blank" href="https://www.zhihu.com/people/imcoder.xyz/activities" title="知乎"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-java数据结构基础" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/11/java数据结构基础/" class="article-date">
+      <time datetime="2016-11-11T05:35:25.000Z" itemprop="datePublished">2016-11-11</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      (转)java数据结构基础
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="一、数据结构概念"><a href="#一、数据结构概念" class="headerlink" title="一、数据结构概念"></a>一、数据结构概念</h3><p>用我的理解，数据结构包含数据和结构，通俗一点就是将数据按照一定的结构组合起来，不同的组合方式会有不同的效率，使用不同的场景，如此而已。比如我们最常用的数组，就是一种数据结构，有独特的承载数据的方式，按顺序排列，其特点就是你可以根据下标快速查找元素，但是因为在数组中插入和删除元素会有其它元素较大幅度的移动，所以会带来较多的消耗，所以因为这种特点，使得数组适合：查询比较频繁，增、删比较少的情况，这就是数据结构的概念。数据结构包括两大类：线性结构和非线性结构，线性结构包括：数组、链表、队列、栈等，非线性结构包括树、图、表等及衍生类结构。本章我们先讲解线性结构，主要从数组、链表、队列、栈方面进行讨论，非线性数据结构在后面会继续讲解。</p>
+<a id="more"></a>
+<h3 id="二、线性表"><a href="#二、线性表" class="headerlink" title="二、线性表"></a>二、线性表</h3><p>线性表是最基本、最简单、也是最常用的一种数据结构。线性表中数据元素之间的关系是一对一的关系，即除了第一个和最后一个数据元素之外，其它数据元素都是首尾相接的。线性表的逻辑结构简单，便于实现和操作。因此，线性表这种数据结构在实际应用中是广泛采用的一种数据结构。其基本操作主要有：<br>1）MakeEmpty(L) 这是一个将L变为空表的方法<br>2）Length（L） 返回表L的长度，即表中元素个数<br>3）Get（L，i） 这是一个函数，函数值为L中位置i处的元素（1≤i≤n）<br>4）Prev（L，i） 取i的前驱元素<br>5）Next（L，i） 取i的后继元素<br>6）Locate（L，x） 这是一个函数，函数值为元素x在L中的位置<br>7）Insert（L，i，x）在表L的位置i处插入元素x，将原占据位置i的元素及后面的元素都向后推一个位置<br>8）Delete（L，p） 从表L中删除位置p处的元素<br>9）IsEmpty(L) 如果表L为空表(长度为0)则返回true，否则返回false<br>10）Clear（L）清除所有元素<br>11）Init（L）同第一个，初始化线性表为空<br>12）Traverse（L）遍历输出所有元素<br>13）Find（L，x）查找并返回元素<br>14）Update（L，x）修改元素<br>15）Sort（L）对所有元素重新按给定的条件排序<br>16) strstr(string1,string2)用于字符数组的求string1中出现string2的首地址<br>不管采用哪种方式实现线性表，至少都应该具有上述这些基本方法，下面我会将下数据结构的基本实现方式。</p>
+<h3 id="三、基础数据结构"><a href="#三、基础数据结构" class="headerlink" title="三、基础数据结构"></a>三、基础数据结构</h3><p>数据结构是一种抽象的数据类型（ADT），可以这么说，我们可以采用任意的方式实现某种数据结构，只要符合将要实现的数据结构的特点，数据结构就是一种标准，我们可以采用不同的方式去实现，最常用的两种就是数组和链表（包括单链表、双向链表等）。<br>数组是非常常见的数据类型，在任何一种语言里都有它的实现。<br>3.1我们这里采用Java来简单实现一下数组<br>数组是一种引用类型的对象，我们可以像下面这样的方式来声明数组：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int a[];</span><br><span class="line">int[] b;</span><br><span class="line">int []c;</span><br><span class="line">a = new int[10];</span><br></pre></td></tr></table></figure>
+<p>总结起来，声明一个数组有基本的三个因素：类型、名称、下标，Java里，数组在格式上相对灵活，下标和名称可以互换位置，前三种情况我们可以理解为声明一个变量，后一种为其赋值。或者像下面这样，在声明的时候赋值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int c[] = &#123;2,3,6,10,99&#125;;</span><br><span class="line">int []d = new int[10];</span><br></pre></td></tr></table></figure>
+<p>我稍微解释一下，其实如果只执行：int[] b,只是在栈上创建一个引用变量，并未赋值，只有当执行d = new int[10]才会在堆上真正的分配空间。上述第一行为静态初始化，就是说用户指定数组的内容，有系统计算数组的大小，第二行恰恰相反，用户指定数组的大小，由系统分配初始值，我们打印一下数组的初始值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int []d = new int[10];</span><br><span class="line">System.out.println(d[2]);</span><br></pre></td></tr></table></figure>
+<p>结果输出0，对于int类型的数组，默认的初始值为0.<br>但是，绝对不可以像下面这样： int e[10] = new int[10];<br>无法通过编译，至于为什么，语法就是这样，这是一种规范，不用去想它。<br>我们可以通过下标来检索数组。下面我举个简单的例子，来说明下数组的用法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">    String name[];</span><br><span class="line">    name = new String[5];</span><br><span class="line">    name[0] = &quot;egg&quot;;</span><br><span class="line">    name[1] = &quot;erqing&quot;;</span><br><span class="line">    name[2] = &quot;baby&quot;;</span><br><span class="line">    for (int i = 0; i &lt; name.length; i++) &#123;</span><br><span class="line">        System.out.println(name[i]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这是最简单的数组声明、创建、赋值、遍历的例子，下面写个增删的例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">package com.xtfggef.algo.array;</span><br><span class="line">public class Array &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int value[] = new int[10];</span><br><span class="line">        for (int i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">            value[i] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        // traverse(value);</span><br><span class="line">        // insert(value, 666, 5);</span><br><span class="line">        delete(value, 3);</span><br><span class="line">        traverse(value);</span><br><span class="line">    &#125;</span><br><span class="line">    public static int[] insert(int[] old, int value, int index) &#123;</span><br><span class="line">        for (int k = old.length - 1; k &gt; index; k--)</span><br><span class="line">            old[k] = old[k - 1];</span><br><span class="line">        old[index] = value;</span><br><span class="line">        return old;</span><br><span class="line">    &#125;</span><br><span class="line">    public static void traverse(int data[]) &#123;</span><br><span class="line">        for (int j = 0; j &lt; data.length; j++)</span><br><span class="line">            System.out.print(data[j] + &quot; &quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    public static int[] delete(int[] old, int index) &#123;</span><br><span class="line">        for (int h = index; h &lt; old.length - 1; h++) &#123;</span><br><span class="line">            old[h] = old[h + 1];</span><br><span class="line">        &#125;</span><br><span class="line">        old[old.length - 1] = 0;</span><br><span class="line">        return old;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>简单写一下，主要想说明数组中删除和增加元素的原理：增加元素，需要将index后面的依次向后移动，然后将值插入index位置，删除则将后面的值依次向前移动，较简单。要记住：数组是表示相同类型的一类数据的集合，下标从0开始，就行了。<br>数组实现的线性表可以参考ArrayList，在JDK中附有源码，感兴趣的同学可以读读。<br>3.2下面我简单介绍下单链表<br>单链表是最简单的链表，有节点之间首尾连接而成，简单示意如下：</p>
+<p>除了头节点，每个节点包含一个数据域一个指针域，除了头、尾节点，每个节点的指针指向下一个节点，下面我们写个例子操作一下单链表。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br></pre></td><td class="code"><pre><span class="line">package com.xtfggef.algo.linkedlist;</span><br><span class="line">public class LinkedList&lt;T&gt; &#123;</span><br><span class="line">    /**</span><br><span class="line">     * class node</span><br><span class="line">     * @author egg</span><br><span class="line">     * @param &lt;T&gt;</span><br><span class="line">     */</span><br><span class="line">    private static class Node&lt;T&gt; &#123;</span><br><span class="line">        T data;</span><br><span class="line">        Node&lt;T&gt; next;</span><br><span class="line">        Node(T data, Node&lt;T&gt; next) &#123;</span><br><span class="line">            this.data = data;</span><br><span class="line">            this.next = next;</span><br><span class="line">        &#125;</span><br><span class="line">        Node(T data) &#123;</span><br><span class="line">            this(data, null);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    // data</span><br><span class="line">    private Node&lt;T&gt; head, tail;</span><br><span class="line">    public LinkedList() &#123;</span><br><span class="line">        head = tail = null;</span><br><span class="line">    &#125;</span><br><span class="line">    /**</span><br><span class="line">     * judge the list is empty</span><br><span class="line">     */</span><br><span class="line">    public boolean isEmpty() &#123;</span><br><span class="line">        return head == null;</span><br><span class="line">    &#125;</span><br><span class="line">    /**</span><br><span class="line">     * add head node</span><br><span class="line">     */</span><br><span class="line">    public void addHead(T item) &#123;</span><br><span class="line">        head = new Node&lt;T&gt;(item);</span><br><span class="line">        if (tail == null)</span><br><span class="line">            tail = head;</span><br><span class="line">    &#125;</span><br><span class="line">    /**</span><br><span class="line">     * add the tail pointer</span><br><span class="line">     */</span><br><span class="line">    public void addTail(T item) &#123;</span><br><span class="line">        if (!isEmpty()) &#123;</span><br><span class="line">            tail.next = new Node&lt;T&gt;(item);</span><br><span class="line">            tail = tail.next;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            head = tail = new Node&lt;T&gt;(item);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    /**</span><br><span class="line">     * print the list</span><br><span class="line">     */</span><br><span class="line">    public void traverse() &#123;</span><br><span class="line">        if (isEmpty()) &#123;</span><br><span class="line">            System.out.println(&quot;null&quot;);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            for (Node&lt;T&gt; p = head; p != null; p = p.next)</span><br><span class="line">                System.out.println(p.data);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    /**</span><br><span class="line">     * insert node from head</span><br><span class="line">     */</span><br><span class="line">    public void addFromHead(T item) &#123;</span><br><span class="line">        Node&lt;T&gt; newNode = new Node&lt;T&gt;(item);</span><br><span class="line">        newNode.next = head;</span><br><span class="line">        head = newNode;</span><br><span class="line">    &#125;</span><br><span class="line">    /**</span><br><span class="line">     * insert node from tail</span><br><span class="line">     */</span><br><span class="line">    public void addFromTail(T item) &#123;</span><br><span class="line">        Node&lt;T&gt; newNode = new Node&lt;T&gt;(item);</span><br><span class="line">        Node&lt;T&gt; p = head;</span><br><span class="line">        while (p.next != null)</span><br><span class="line">            p = p.next;</span><br><span class="line">        p.next = newNode;</span><br><span class="line">        newNode.next = null;</span><br><span class="line">    &#125;</span><br><span class="line">    /**</span><br><span class="line">     * delete node from head</span><br><span class="line">     */</span><br><span class="line">    public void removeFromHead() &#123;</span><br><span class="line">        if (!isEmpty())</span><br><span class="line">            head = head.next;</span><br><span class="line">        else</span><br><span class="line">            System.out.println(&quot;The list have been emptied!&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    /**</span><br><span class="line">     * delete frem tail, lower effect</span><br><span class="line">     */</span><br><span class="line">    public void removeFromTail() &#123;</span><br><span class="line">        Node&lt;T&gt; prev = null, curr = head;</span><br><span class="line">        while (curr.next != null) &#123;</span><br><span class="line">            prev = curr;</span><br><span class="line">            curr = curr.next;</span><br><span class="line">            if (curr.next == null)</span><br><span class="line">                prev.next = null;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    /**</span><br><span class="line">     * insert a new node</span><br><span class="line">     * @param appointedItem</span><br><span class="line">     * @param item</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    public boolean insert(T appointedItem, T item) &#123;</span><br><span class="line">        Node&lt;T&gt; prev = head, curr = head.next, newNode;</span><br><span class="line">        newNode = new Node&lt;T&gt;(item);</span><br><span class="line">        if (!isEmpty()) &#123;</span><br><span class="line">            while ((curr != null) &amp;&amp; (!appointedItem.equals(curr.data))) &#123;</span><br><span class="line">                prev = curr;</span><br><span class="line">                curr = curr.next;</span><br><span class="line">            &#125;</span><br><span class="line">            newNode.next = curr;</span><br><span class="line">            prev.next = newNode;</span><br><span class="line">            return true;</span><br><span class="line">        &#125;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">    public void remove(T item) &#123;</span><br><span class="line">        Node&lt;T&gt; curr = head, prev = null;</span><br><span class="line">        boolean found = false;</span><br><span class="line">        while (curr != null &amp;&amp; !found) &#123;</span><br><span class="line">            if (item.equals(curr.data)) &#123;</span><br><span class="line">                if (prev == null)</span><br><span class="line">                    removeFromHead();</span><br><span class="line">                else</span><br><span class="line">                    prev.next = curr.next;</span><br><span class="line">                found = true;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                prev = curr;</span><br><span class="line">                curr = curr.next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    public int indexOf(T item) &#123;</span><br><span class="line">        int index = 0;</span><br><span class="line">        Node&lt;T&gt; p;</span><br><span class="line">        for (p = head; p != null; p = p.next) &#123;</span><br><span class="line">            if (item.equals(p.data))</span><br><span class="line">                return index;</span><br><span class="line">            index++;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        return -1;</span><br><span class="line">    &#125;</span><br><span class="line">    /**</span><br><span class="line">     * judge the list contains one data</span><br><span class="line">     */</span><br><span class="line">    public boolean contains(T item) &#123;</span><br><span class="line">        return indexOf(item) != -1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>单链表最好玩儿的也就是增加和删除节点，下面的两个图分别是用图来表示单链表增、删节点示意，看着图学习，理解起来更加容易！</p>
+<p>接下来的队列和栈，我们分别用不同的结构来实现，队列用数组，栈用单列表，读者朋友对此感兴趣，可以分别再用不同的方法实现。</p>
+<h3 id="四、队列"><a href="#四、队列" class="headerlink" title="四、队列"></a>四、队列</h3><p>队列是一个常用的数据结构，是一种先进先出（First In First Out, FIFO）的结构，也就是说只能在表头进行删除，在表尾进行添加，下面我们实现一个简单的队列。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line">package com.xtfggef.algo.queue;</span><br><span class="line">import java.util.Arrays;</span><br><span class="line">public class Queue&lt;T&gt; &#123;</span><br><span class="line">    private int DEFAULT_SIZE = 10;</span><br><span class="line">    private int capacity;</span><br><span class="line">    private Object[] elementData;</span><br><span class="line">    private int front = 0;</span><br><span class="line">    private int rear = 0;</span><br><span class="line">    public Queue()</span><br><span class="line">    &#123;</span><br><span class="line">        capacity = DEFAULT_SIZE;</span><br><span class="line">        elementData = new Object[capacity];</span><br><span class="line">    &#125;</span><br><span class="line">    public Queue(T element)</span><br><span class="line">    &#123;</span><br><span class="line">        this();</span><br><span class="line">        elementData[0] = element;</span><br><span class="line">        rear++;</span><br><span class="line">    &#125;</span><br><span class="line">    public Queue(T element , int initSize)</span><br><span class="line">    &#123;</span><br><span class="line">        this.capacity = initSize;</span><br><span class="line">        elementData = new Object[capacity];</span><br><span class="line">        elementData[0] = element;</span><br><span class="line">        rear++;</span><br><span class="line">    &#125;</span><br><span class="line">    public int size()</span><br><span class="line">    &#123;</span><br><span class="line">        return rear - front;</span><br><span class="line">    &#125;</span><br><span class="line">    public void add(T element)</span><br><span class="line">    &#123;</span><br><span class="line">        if (rear &gt; capacity - 1)</span><br><span class="line">        &#123;</span><br><span class="line">            throw new IndexOutOfBoundsException(&quot;the queue is full!&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        elementData[rear++] = element;</span><br><span class="line">    &#125;</span><br><span class="line">        public T remove()</span><br><span class="line">    &#123;</span><br><span class="line">        if (empty())</span><br><span class="line">        &#123;</span><br><span class="line">            throw new IndexOutOfBoundsException(&quot;queue is empty&quot;);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        @SuppressWarnings(&quot;unchecked&quot;)</span><br><span class="line">        T oldValue = (T)elementData[front];</span><br><span class="line"></span><br><span class="line">        elementData[front++] = null;</span><br><span class="line">        return oldValue;</span><br><span class="line">    &#125;</span><br><span class="line">    @SuppressWarnings(&quot;unchecked&quot;)</span><br><span class="line">    public T element()</span><br><span class="line">    &#123;</span><br><span class="line">        if (empty())</span><br><span class="line">        &#123;</span><br><span class="line">            throw new IndexOutOfBoundsException(&quot;queue is empty&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        return (T)elementData[front];</span><br><span class="line">    &#125;</span><br><span class="line">    public boolean empty()</span><br><span class="line">    &#123;</span><br><span class="line">        return rear == front;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void clear()</span><br><span class="line">    &#123;</span><br><span class="line">        Arrays.fill(elementData , null);</span><br><span class="line">        front = 0;</span><br><span class="line">        rear = 0;</span><br><span class="line">    &#125;</span><br><span class="line">    public String toString()</span><br><span class="line">    &#123;</span><br><span class="line">        if (empty())</span><br><span class="line">        &#123;</span><br><span class="line">            return &quot;[]&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            StringBuilder sb = new StringBuilder(&quot;[&quot;);</span><br><span class="line">            for (int i = front  ; i &lt; rear ; i++ )</span><br><span class="line">            &#123;</span><br><span class="line">                sb.append(elementData[i].toString() + &quot;, &quot;);</span><br><span class="line">            &#125;</span><br><span class="line">            int len = sb.length();</span><br><span class="line">            return sb.delete(len - 2 , len).append(&quot;]&quot;).toString();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Queue&lt;String&gt; queue = new Queue&lt;String&gt;(&quot;ABC&quot;, 20);</span><br><span class="line">        queue.add(&quot;DEF&quot;);</span><br><span class="line">        queue.add(&quot;egg&quot;);</span><br><span class="line">        System.out.println(queue.empty());</span><br><span class="line">        System.out.println(queue.size());</span><br><span class="line">        System.out.println(queue.element());</span><br><span class="line">        queue.clear();</span><br><span class="line">        System.out.println(queue.empty());</span><br><span class="line">        System.out.println(queue.size());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>队列只能在表头进行删除，在表尾进行增加，这种结构的特点，适用于排队系统。</p>
+<h3 id="五、栈"><a href="#五、栈" class="headerlink" title="五、栈"></a>五、栈</h3><p>栈是一种后进先出（Last In First Out，LIFO）的数据结构，我们采用单链表实现一个栈。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">package com.xtfggef.algo.stack;</span><br><span class="line">import com.xtfggef.algo.linkedlist.LinkedList;</span><br><span class="line">public class Stack&lt;T&gt; &#123;</span><br><span class="line"></span><br><span class="line">    static class Node&lt;T&gt; &#123;</span><br><span class="line">        T data;</span><br><span class="line">        Node&lt;T&gt; next;</span><br><span class="line"></span><br><span class="line">        Node(T data, Node&lt;T&gt; next) &#123;</span><br><span class="line">            this.data = data;</span><br><span class="line">            this.next = next;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Node(T data) &#123;</span><br><span class="line">            this(data, null);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @SuppressWarnings(&quot;rawtypes&quot;)</span><br><span class="line">    static LinkedList list = new LinkedList();</span><br><span class="line"></span><br><span class="line">    @SuppressWarnings(&quot;unchecked&quot;)</span><br><span class="line">    public T push(T item) &#123;</span><br><span class="line">        list.addFromHead(item);</span><br><span class="line">        return item;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void pop() &#123;</span><br><span class="line">        list.removeFromHead();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public boolean empty() &#123;</span><br><span class="line">        return list.isEmpty();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public int search(T t) &#123;</span><br><span class="line">        return list.indexOf(t);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Stack&lt;String&gt; stack = new Stack&lt;String&gt;();</span><br><span class="line">        System.out.println(stack.empty());</span><br><span class="line">        stack.push(&quot;abc&quot;);</span><br><span class="line">        stack.push(&quot;def&quot;);</span><br><span class="line">        stack.push(&quot;egg&quot;);</span><br><span class="line">        stack.pop();</span><br><span class="line">        System.out.println(stack.search(&quot;def&quot;));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="六、树"><a href="#六、树" class="headerlink" title="六、树"></a>六、树</h3><p>树形结构是一类重要的非线性结构。树形结构是结点之间有分支，并具有层次关系的结构。它非常类似于自然界中的树。树结构在客观世界中是大量存在的，例如家谱、行政组织机构都可用树形象地表示。树在计算机领域中也有着广泛的应用，例如在编译程序中，用树来表示源程序的语法结构；在数据库系统中，可用树来组织信息；在分析算法的行为时，可用树来描述其执行过程。本章重点讨论二叉树的存储表示及其各种运算，并研究一般树和森林与二叉树的转换关系，最后介绍树的应用实例。</p>
+<h3 id="七、二叉树"><a href="#七、二叉树" class="headerlink" title="七、二叉树"></a>七、二叉树</h3><p>二叉树(BinaryTree)是n(n≥0)个结点的有限集，它或者是空集(n=0)，或者由一个根结点及两棵互不相交的、分别称作这个根的左子树和右子树的二叉树组成。关于更多概念，请大家自己上网查询，我们这里将用代码实现常见的算法。更多的概念，请访问：<a href="http://student.zjzk.cn/course_ware/data_structure/web/SHU/shu6.2.3.1.htm" target="_blank" rel="noopener">http://student.zjzk.cn/course_ware/data_structure/web/SHU/shu6.2.3.1.htm</a> 。<br>1、二叉树的建立<br>首先，我们采用广义表建立二叉树（关于广义表的概念，请查看百科的介绍：<a href="http://baike.baidu.com/view/203611.htm）" target="_blank" rel="noopener">http://baike.baidu.com/view/203611.htm）</a><br>我们建立一个字符串类型的广义表作为输入：<br>String expression = “A(B(D(,G)),C(E,F))”;与该广义表对应的二叉树为：</p>
+<p>写代码前，我们通过观察二叉树和广义表，先得出一些结论：<br>每当遇到字母，将要创建节点<br>每当遇到“（”，表面要创建左孩子节点<br>每当遇到“，”，表明要创建又孩子节点<br>每当遇到“）”，表明要返回上一层节点<br>广义表中“（”的数量正好是二叉树的层数<br>根据这些结论，我们基本就可以开始写代码了。首先建议一个节点类（这也属于一种自定义的数据结构）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">package com.xtfggef.algo.tree;</span><br><span class="line"></span><br><span class="line">public class Node &#123;</span><br><span class="line"></span><br><span class="line">    private char data;</span><br><span class="line">    private Node lchild;</span><br><span class="line">    private Node rchild;</span><br><span class="line"></span><br><span class="line">    public Node()&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    public char getData() &#123;</span><br><span class="line">        return data;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setData(char data) &#123;</span><br><span class="line">        this.data = data;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Node getRchild() &#123;</span><br><span class="line">        return rchild;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setRchild(Node rchild) &#123;</span><br><span class="line">        this.rchild = rchild;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Node getLchild() &#123;</span><br><span class="line">        return lchild;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setLchild(Node lchild) &#123;</span><br><span class="line">        this.lchild = lchild;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Node(char ch, Node rchild, Node lchild) &#123;</span><br><span class="line">        this.data = ch;</span><br><span class="line">        this.rchild = rchild;</span><br><span class="line">        this.lchild = lchild;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String toString() &#123;</span><br><span class="line">        return &quot;&quot; + getData();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>根据广义表创建二叉树的代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">public Node createTree(String exp) &#123;</span><br><span class="line">        Node[] nodes = new Node[3];</span><br><span class="line">        Node b, p = null;</span><br><span class="line">        int top = -1, k = 0, j = 0;</span><br><span class="line">        char[] exps = exp.toCharArray();</span><br><span class="line">        char data = exps[j];</span><br><span class="line">        b = null;</span><br><span class="line">        while (j &lt; exps.length - 1) &#123;</span><br><span class="line">            switch (data) &#123;</span><br><span class="line">            case &apos;(&apos;:</span><br><span class="line">                top++;</span><br><span class="line">                nodes[top] = p;</span><br><span class="line">                k = 1;</span><br><span class="line">                break;</span><br><span class="line">            case &apos;)&apos;:</span><br><span class="line">                top--;</span><br><span class="line">                break;</span><br><span class="line">            case &apos;,&apos;:</span><br><span class="line">                k = 2;</span><br><span class="line">                break;</span><br><span class="line">            default:</span><br><span class="line">                p = new Node(data, null, null);</span><br><span class="line">                if (b == null) &#123;</span><br><span class="line">                    b = p;</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                    switch (k) &#123;</span><br><span class="line">                    case 1:</span><br><span class="line">                        nodes[top].setLchild(p);</span><br><span class="line">                        break;</span><br><span class="line">                    case 2:</span><br><span class="line">                        nodes[top].setRchild(p);</span><br><span class="line">                        break;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            j++;</span><br><span class="line">            data = exps[j];</span><br><span class="line">        &#125;</span><br><span class="line">        return b;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>思路不难，结合上述的理论，自己断点走一遍程序就懂了！</p>
+<h4 id="2、二叉树的递归遍历"><a href="#2、二叉树的递归遍历" class="headerlink" title="2、二叉树的递归遍历"></a>2、二叉树的递归遍历</h4><p>二叉树的遍历有三种：先序、中序、后序，每种又分递归和非递归。递归程序理解起来有一定的难度，但是实现起来比较简单。对于上述二叉树，其：<br>a 先序遍历<br>A B D G C E F<br>b 中序遍历<br>D G B A E C F<br>c 后序遍历<br>G D B E F C A<br>先、中、后序递归遍历如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">     * pre order recursive</span><br><span class="line">     *</span><br><span class="line">     * @param node</span><br><span class="line">     */</span><br><span class="line">    public void PreOrder(Node node) &#123;</span><br><span class="line">        if (node == null) &#123;</span><br><span class="line">            return;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            System.out.print(node.getData() + &quot; &quot;);</span><br><span class="line">            PreOrder(node.getLchild());</span><br><span class="line">            PreOrder(node.getRchild());</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * in order recursive</span><br><span class="line">     *</span><br><span class="line">     * @param node</span><br><span class="line">     */</span><br><span class="line">    public void InOrder(Node node) &#123;</span><br><span class="line">        if (node == null) &#123;</span><br><span class="line">            return;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            InOrder(node.getLchild());</span><br><span class="line">            System.out.print(node.getData() + &quot; &quot;);</span><br><span class="line">            InOrder(node.getRchild());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * post order recursive</span><br><span class="line">     *</span><br><span class="line">     * @param node</span><br><span class="line">     */</span><br><span class="line">    public void PostOrder(Node node) &#123;</span><br><span class="line">        if (node == null) &#123;</span><br><span class="line">            return;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            PostOrder(node.getLchild());</span><br><span class="line">            PostOrder(node.getRchild());</span><br><span class="line">            System.out.print(node.getData() + &quot; &quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>二叉树的递归遍历实现起来很简单，关键是非递归遍历有些难度，请看下面的代码：</p>
+<h4 id="3、二叉树的非递归遍历"><a href="#3、二叉树的非递归遍历" class="headerlink" title="3、二叉树的非递归遍历"></a>3、二叉树的非递归遍历</h4><p>先序非递归遍历：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">public void PreOrderNoRecursive(Node node) &#123;</span><br><span class="line">        Node nodes[] = new Node[CAPACITY];</span><br><span class="line">        Node p = null;</span><br><span class="line">        int top = -1;</span><br><span class="line">        if (node != null) &#123;</span><br><span class="line">            top++;</span><br><span class="line">            nodes[top] = node;</span><br><span class="line">            while (top &gt; -1) &#123;</span><br><span class="line">                p = nodes[top];</span><br><span class="line">                top--;</span><br><span class="line">                System.out.print(p.getData() + &quot; &quot;);</span><br><span class="line">                if (p.getRchild() != null) &#123;</span><br><span class="line">                    top++;</span><br><span class="line">                    nodes[top] = p.getRchild();</span><br><span class="line">                &#125;</span><br><span class="line">                if (p.getLchild() != null) &#123;</span><br><span class="line">                    top++;</span><br><span class="line">                    nodes[top] = p.getLchild();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>原理：利用一个栈，先序遍历即为根先遍历，先将根入栈，然后出栈，凡是出栈的元素都打印值，入栈之前top++，出栈之后top—，利用栈后进先出的原<br>理，右节点先于左节点进栈，根出栈后，开始处理左子树，然后是右子树，读者朋友们可以自己走一遍程序看看，也不算难理解！</p>
+<p>中序非递归遍历：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public void InOrderNoRecursive(Node node) &#123;</span><br><span class="line">        Node nodes[] = new Node[CAPACITY];</span><br><span class="line">        Node p = null;</span><br><span class="line">        int top = -1;</span><br><span class="line">        if (node != null)</span><br><span class="line">            p = node;</span><br><span class="line">        while (p != null || top &gt; -1) &#123;</span><br><span class="line">            while (p != null) &#123;</span><br><span class="line">                top++;</span><br><span class="line">                nodes[top] = p;</span><br><span class="line">                p = p.getLchild();</span><br><span class="line">            &#125;</span><br><span class="line">            if (top &gt; -1) &#123;</span><br><span class="line">                p = nodes[top];</span><br><span class="line">                top--;</span><br><span class="line">                System.out.print(p.getData() + &quot; &quot;);</span><br><span class="line">                p = p.getRchild();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>原理省略。</p>
+<p>后续非递归遍历：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">public void PostOrderNoRecursive(Node node) &#123;</span><br><span class="line">        Node[] nodes = new Node[CAPACITY];</span><br><span class="line">        Node p = null;</span><br><span class="line">        int flag = 0, top = -1;</span><br><span class="line">        if (node != null) &#123;</span><br><span class="line">            do &#123;</span><br><span class="line">                while (node != null) &#123;</span><br><span class="line">                    top++;</span><br><span class="line">                    nodes[top] = node;</span><br><span class="line">                    node = node.getLchild();</span><br><span class="line">                &#125;</span><br><span class="line">                p = null;</span><br><span class="line">                flag = 1;</span><br><span class="line">                while (top != -1 &amp;&amp; flag != 0) &#123;</span><br><span class="line">                    node = nodes[top];</span><br><span class="line">                    if (node.getRchild() == p) &#123;</span><br><span class="line">                        System.out.print(node.getData() + &quot; &quot;);</span><br><span class="line">                        top--;</span><br><span class="line">                        p = node;</span><br><span class="line">                    &#125; else &#123;</span><br><span class="line">                        node = node.getRchild();</span><br><span class="line">                        flag = 0;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; while (top != -1);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>文章来源：<a href="http://blog.csdn.net/zolalad/article/details/17144213" target="_blank" rel="noopener">http://blog.csdn.net/zolalad/article/details/17144213</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/11/11/java数据结构基础/">(转)java数据结构基础</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">siliconx</a></p>
+        <p><span>发布时间:</span>2016-11-11, 13:35:25</p>
+        <p><span>最后更新:</span>2018-03-16, 17:05:46</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/11/11/java数据结构基础/" title="(转)java数据结构基础">http://blog.siliconx.xyz/2016/11/11/java数据结构基础/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://blog.siliconx.xyz/2016/11/11/java数据结构基础/　　作者: siliconx" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/11/17/数据结构-二/">
+                    数据结构-二
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/11/11/数据结构-一/">
+                    数据结构-一
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、数据结构概念"><span class="toc-number">1.</span> <span class="toc-text">一、数据结构概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、线性表"><span class="toc-number">2.</span> <span class="toc-text">二、线性表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、基础数据结构"><span class="toc-number">3.</span> <span class="toc-text">三、基础数据结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、队列"><span class="toc-number">4.</span> <span class="toc-text">四、队列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五、栈"><span class="toc-number">5.</span> <span class="toc-text">五、栈</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#六、树"><span class="toc-number">6.</span> <span class="toc-text">六、树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#七、二叉树"><span class="toc-number">7.</span> <span class="toc-text">七、二叉树</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2、二叉树的递归遍历"><span class="toc-number">7.1.</span> <span class="toc-text">2、二叉树的递归遍历</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、二叉树的非递归遍历"><span class="toc-number">7.2.</span> <span class="toc-text">3、二叉树的非递归遍历</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"(转)java数据结构基础　| siliconx's blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+        <section class="youyan" id="comments">
+    <script>
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = 'http://v2.uyan.cc/code/uyan.js?uid=2130428';
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <script> loadComment(); </script>
+
+    <div id="uyan_frame"></div>
+</section>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/11/17/数据结构-二/" title="上一篇: 数据结构-二">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/11/11/数据结构-一/" title="下一篇: 数据结构-一">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/03/16/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/17/数据结构-二/">数据结构-二</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/11/java数据结构基础/">(转)java数据结构基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/11/数据结构-一/">数据结构-一</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/07/AlgorithmAnalysis/">Algorithm Analysis</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/29/算法-排序/">算法(排序)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/15/ThinkInC/">Thinking in C</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/05/ThinkInPython/">Think in Python</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/JAVA学习笔记/">JAVA学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/06/docker笔记/">docker笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/25/MySQL笔记/">MySQL笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/20/暑期流水账/">暑期流水账</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/02/树莓派初体验/">树莓派初体验</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/13/Python胶水语言特性实现-调用C/">Python胶水语言特性实现(调用C)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/06/web开发-cookie探秘/">web开发--cookie探秘</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/02/CPP入门之贪吃蛇/">C++入门之贪吃蛇</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2018 siliconx
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

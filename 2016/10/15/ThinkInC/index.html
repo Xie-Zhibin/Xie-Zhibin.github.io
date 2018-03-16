@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="Docker 笔记简介:Docker是基于Linux 64bit下的一个轻量级的开源应用容器引擎。Docker 是一个开源项目，诞生于 2013 年初，最初是 dotCloud 公司内部的一个业余项目。它基于 Google 公司推出的 Go 语言实现。 项目后来加入了 Linux 基金会，遵从了 Apache 2.0 协议，项目代码在 GitHub 上进行维护。Docker容器除了运行其中应用外，">
-<meta name="keywords" content="Docker">
+<meta name="description" content="Thinking in C为了更好地学习数据结构和算法，花了几天时间复习了一遍C语言。把原来没有理解透彻的和已经快要忘记的一些知识点记录下来，作为复习的总结，也方便以后参考。">
+<meta name="keywords" content="C&#x2F;C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="docker笔记">
-<meta property="og:url" content="http://blog.siliconx.xyz/2016/09/06/docker笔记/index.html">
+<meta property="og:title" content="Thinking in C">
+<meta property="og:url" content="http://blog.siliconx.xyz/2016/10/15/ThinkInC/index.html">
 <meta property="og:site_name" content="siliconx&#39;s blog">
-<meta property="og:description" content="Docker 笔记简介:Docker是基于Linux 64bit下的一个轻量级的开源应用容器引擎。Docker 是一个开源项目，诞生于 2013 年初，最初是 dotCloud 公司内部的一个业余项目。它基于 Google 公司推出的 Go 语言实现。 项目后来加入了 Linux 基金会，遵从了 Apache 2.0 协议，项目代码在 GitHub 上进行维护。Docker容器除了运行其中应用外，">
+<meta property="og:description" content="Thinking in C为了更好地学习数据结构和算法，花了几天时间复习了一遍C语言。把原来没有理解透彻的和已经快要忘记的一些知识点记录下来，作为复习的总结，也方便以后参考。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-16T08:56:15.626Z">
+<meta property="og:updated_time" content="2018-03-16T09:03:30.586Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="docker笔记">
-<meta name="twitter:description" content="Docker 笔记简介:Docker是基于Linux 64bit下的一个轻量级的开源应用容器引擎。Docker 是一个开源项目，诞生于 2013 年初，最初是 dotCloud 公司内部的一个业余项目。它基于 Google 公司推出的 Go 语言实现。 项目后来加入了 Linux 基金会，遵从了 Apache 2.0 协议，项目代码在 GitHub 上进行维护。Docker容器除了运行其中应用外，">
+<meta name="twitter:title" content="Thinking in C">
+<meta name="twitter:description" content="Thinking in C为了更好地学习数据结构和算法，花了几天时间复习了一遍C语言。把原来没有理解透彻的和已经快要忘记的一些知识点记录下来，作为复习的总结，也方便以后参考。">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>docker笔记 | siliconx&#39;s blog</title>
+<title>Thinking in C | siliconx&#39;s blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -262,11 +262,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-docker笔记" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-ThinkInC" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/09/06/docker笔记/" class="article-date">
-      <time datetime="2016-09-06T06:26:59.000Z" itemprop="datePublished">2016-09-06</time>
+      <a href="/2016/10/15/ThinkInC/" class="article-date">
+      <time datetime="2016-10-15T02:28:30.000Z" itemprop="datePublished">2016-10-15</time>
 </a>
 
 
@@ -281,7 +281,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      docker笔记
+      Thinking in C
     </h1>
   
 
@@ -292,7 +292,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-C/">C/C++</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -302,21 +302,19 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="Docker-笔记"><a href="#Docker-笔记" class="headerlink" title="Docker 笔记"></a>Docker 笔记</h2><p>简介:<br>Docker是基于Linux 64bit下的一个轻量级的开源应用容器引擎。<br>Docker 是一个开源项目，诞生于 2013 年初，最初是 dotCloud 公司内部的一个业余项目。它基于 Google 公司推出的 Go 语言实现。 项目后来加入了 Linux 基金会，遵从了 Apache 2.0 协议，项目代码在 GitHub 上进行维护。<br>Docker容器除了运行其中应用外，基本不消耗额外的系统资源，使得应用的性能很高，同时系统的开销尽量小。相比于传统虚拟机，docker容器占用的资源非常少，启动速度也非常快。</p>
+        <h1 id="Thinking-in-C"><a href="#Thinking-in-C" class="headerlink" title="Thinking in C"></a>Thinking in C</h1><p>为了更好地学习数据结构和算法，花了几天时间复习了一遍C语言。把原来没有理解透彻的和已经快要忘记的一些知识点记录下来，作为复习的总结，也方便以后参考。</p>
 <a id="more"></a>
-<p>利用docker可以实现网站应用一键部署，大量地节约了部署测试的时间。<br>常用命令</p>
-<pre><code>获取镜像：docker pull REPO_NAME:TAG_NAME
-创建容器：docker run —name CONTAINER_NAME [params…]
-创建容器时挂载数据卷: docker run -v local_dir:docker_dir (冒号前为宿主机目录，必须为绝对路径，冒号后为镜像内挂载的路径)
-清楚所有未打过标签的本地镜像：docker rmi $(docker images -q -f “dangling=true”)
-清除所有容器：docker rm $(docker ps -a -q)，需要清除正在运行的容器需加 -f 参数
-</code></pre><p>docker 的很多操作都与git相似，可以类比学习。<br>注意事项</p>
-<pre><code>Dockerfile 中的CMD 指定启动容器时执行的命令，每个 Dockerfile 只能有一条 CMD 命令。如果指定了多条命令，只有最后一条会被执行。如
-果确实要执行多条命令，那么可以将命令写在shell脚本中，再由CMD命令运行这个shell脚本。
+<hr>
+<h2 id="A-指针"><a href="#A-指针" class="headerlink" title="A.指针"></a>A.指针</h2><p>指针是一个其数值为地址的变量(或数据对象)。指针是一种数据类型，可以进行相应的指针运算。<br>当创建一个指针时，系统只分配了用来存储指针本身的内存空间，并不分配用来存储数据的内存空间。因此在使用指针之前，必须给它赋予一个已分配的内存地址。未经初始化的指针由于其指向不确定，会带来很多潜在的错误。</p>
+<hr>
+<h2 id="B-数组与指针"><a href="#B-数组与指针" class="headerlink" title="B.数组与指针"></a>B.数组与指针</h2><p>数组名同时也是该数组首元素的地址。即，<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">对于数组的访问可以由指向数组的指针代替， ```*(arr + i) == arr[i]</span><br></pre></td></tr></table></figure></p>
+<p>对指针加1,不是使指针增加一个字节，而是等价于对指针的值加上它指向的对象的字节大小，即让指针指向下一个元素。</p>
+<hr>
+<h2 id="C-函数与指针"><a href="#C-函数与指针" class="headerlink" title="C.函数与指针"></a>C.函数与指针</h2><p>使用指针作为函数的指针可以使函数操作各种复杂的数据结构。<br>指针也可以指向函数。一个函数指针可以作为另一个函数的参数。<br><figure class="highlight plain"><figcaption><span>(* pf)(char *);``` 表示pf是一个指向一个以字符指针为参数，无返回值的函数。```(* pf)```即为指向的函数。</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">在ANSI C中将两种调用指针指向的函数的方式视为等价，即```(* pf)() ```与 ```pf()```等价</span><br><span class="line"></span><br><span class="line">***</span><br><span class="line"></span><br><span class="line">## D.内存管理</span><br><span class="line">C中，可以用malloc() 和 free() 分别进行动态内存分配和释放内存。</span><br><span class="line">I.分配内存</span><br><span class="line">在用malloc() 函数动态分配内存时，malloc()接受一个参数：所需内存字节数。然后malloc()寻找可用内存中一个大小适合的块，分配成功，返回那块内存的第一个字节的地址，分配失败，返回NULL</span><br><span class="line">malloc()返回一个指向void的指针，这是ANSI C标准的一个新类型，这一类型被用作“通用指针”，因此一般需要把返回值指派为适当的类型。</span><br><span class="line">如下代码请求30个double类型值的空间。</span><br></pre></td></tr></table></figure></p>
+<p>double <em> ptd;<br>ptd = (double </em>) malloc(30 * sizeof (double));<br><code>`</code><br>注：sizeof是一个运算符，不是一个函数。它的操作数可以时一个具体的数据对象(如一个变量名)，或者一个类型。如果是一个类型，操作数必须放在括号中。sizeof返回size_t类型的值，它是一个无符号整数类型，但不是一个新类型。C99中把%zd作为用来显示size_t类型值的printf()说明符，也可以使用%u, %lu代替.</p>
+<hr>
+<p>II.回收内存<br>由于C不具备如Java等其他语言的自动垃圾回收功能，适时释放分配的内存空间就变得及其重要，否则容易导致内存泄漏。<br>在编译程序时，静态变量的数量是固定的，在程序运行时也是不改变的。自动变量使用的内存数量在程序执行时自动增加或减少。但被分配的内存所使用的内存数量只会增加，除非记得使用free()</p>
 
-Dockerfile 中不支持将主机目录作为数据卷这种用法，这是因为 Dockerfile 是为了移植和分享用的。然而，不同操作系统的路径格式不一样，
-所以目前还不能支持。只能在创建容器的时候以参数的形式传递。
-</code></pre>
       
     </div>
     
@@ -324,13 +322,13 @@ Dockerfile 中不支持将主机目录作为数据卷这种用法，这是因为
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/09/06/docker笔记/">docker笔记</a></p>
+        <p><span>本文标题:</span><a href="/2016/10/15/ThinkInC/">Thinking in C</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">siliconx</a></p>
-        <p><span>发布时间:</span>2016-09-06, 14:26:59</p>
-        <p><span>最后更新:</span>2018-03-16, 16:56:15</p>
+        <p><span>发布时间:</span>2016-10-15, 10:28:30</p>
+        <p><span>最后更新:</span>2018-03-16, 17:03:30</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/09/06/docker笔记/" title="docker笔记">http://blog.siliconx.xyz/2016/09/06/docker笔记/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://blog.siliconx.xyz/2016/09/06/docker笔记/　　作者: siliconx" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/10/15/ThinkInC/" title="Thinking in C">http://blog.siliconx.xyz/2016/10/15/ThinkInC/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://blog.siliconx.xyz/2016/10/15/ThinkInC/　　作者: siliconx" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -343,15 +341,15 @@ Dockerfile 中不支持将主机目录作为数据卷这种用法，这是因为
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/09/28/JAVA学习笔记/">
-                    JAVA学习笔记
+                <a href="/2016/10/29/算法-排序/">
+                    算法(排序)
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/08/25/MySQL笔记/">
-                    MySQL笔记
+                <a href="/2016/10/05/ThinkInPython/">
+                    Think in Python
                 </a>
             </div>
         
@@ -363,7 +361,7 @@ Dockerfile 中不支持将主机目录作为数据卷这种用法，这是因为
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker-笔记"><span class="toc-number">1.</span> <span class="toc-text">Docker 笔记</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Thinking-in-C"><span class="toc-number">1.</span> <span class="toc-text">Thinking in C</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#A-指针"><span class="toc-number">1.1.</span> <span class="toc-text">A.指针</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#B-数组与指针"><span class="toc-number">1.2.</span> <span class="toc-text">B.数组与指针</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-函数与指针"><span class="toc-number">1.3.</span> <span class="toc-text">C.函数与指针</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -399,7 +397,7 @@ Dockerfile 中不支持将主机目录作为数据卷这种用法，这是因为
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"docker笔记　| siliconx's blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Thinking in C　| siliconx's blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -433,7 +431,7 @@ Dockerfile 中不支持将主机目录作为数据卷这种用法，这是因为
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/09/28/JAVA学习笔记/" title="上一篇: JAVA学习笔记">
+            <a href="/2016/10/29/算法-排序/" title="上一篇: 算法(排序)">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -441,7 +439,7 @@ Dockerfile 中不支持将主机目录作为数据卷这种用法，这是因为
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/08/25/MySQL笔记/" title="下一篇: MySQL笔记">
+            <a href="/2016/10/05/ThinkInPython/" title="下一篇: Think in Python">
                 <i class="fa fa-angle-right"></i>
             </a>
         
