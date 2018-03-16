@@ -15,20 +15,18 @@
 
 
 
-<meta name="description" content="web开发–cookie探秘相信熟悉web开发者对cookie一定不陌生，但相信很多人一开始都跟作者一样，仅仅只是知道这个东西，只知道简单地使用，那么今天我们就从它的源头谈起。 先看下维基百科的解释： Cookie，中文名称为“小型文本文件”或“小甜饼”，指某些网站为了辨别用户身份而储存在用户本地终端（Client Side）上的数据（通常经过加密）。定义于RFC2109。是网景公司的前雇员卢·蒙">
-<meta name="keywords" content="web">
+<meta name="description" content="Python胶水语言特性实现(调用C)都说Python是一门胶水语言，那么它的胶水特性体现在哪里呢？ Python深受欢迎的主要原因不仅是它的代码的简洁，更重要的是它的可扩展性。纵观软件工程的历史，编程语言都不具备可扩展性，只能用这门语言已有的功能，而不能为语言增加新功能。而Python可以，Python可以添加额外的非Python的功能，都知道Python的底层是用C写的，因此Python和C可">
+<meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="web开发--cookie探秘">
-<meta property="og:url" content="http://blog.siliconx.xyz/2016/05/06/web开发-cookie探秘/index.html">
+<meta property="og:title" content="Python胶水语言特性实现(调用C)">
+<meta property="og:url" content="http://blog.siliconx.xyz/2016/05/13/Python胶水语言特性实现-调用C/index.html">
 <meta property="og:site_name" content="siliconx&#39;s blog">
-<meta property="og:description" content="web开发–cookie探秘相信熟悉web开发者对cookie一定不陌生，但相信很多人一开始都跟作者一样，仅仅只是知道这个东西，只知道简单地使用，那么今天我们就从它的源头谈起。 先看下维基百科的解释： Cookie，中文名称为“小型文本文件”或“小甜饼”，指某些网站为了辨别用户身份而储存在用户本地终端（Client Side）上的数据（通常经过加密）。定义于RFC2109。是网景公司的前雇员卢·蒙">
+<meta property="og:description" content="Python胶水语言特性实现(调用C)都说Python是一门胶水语言，那么它的胶水特性体现在哪里呢？ Python深受欢迎的主要原因不仅是它的代码的简洁，更重要的是它的可扩展性。纵观软件工程的历史，编程语言都不具备可扩展性，只能用这门语言已有的功能，而不能为语言增加新功能。而Python可以，Python可以添加额外的非Python的功能，都知道Python的底层是用C写的，因此Python和C可">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://7xtgpc.com2.z0.glb.clouddn.com/cookies.png">
-<meta property="og:updated_time" content="2018-03-16T08:37:28.496Z">
+<meta property="og:updated_time" content="2018-03-16T08:53:44.220Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="web开发--cookie探秘">
-<meta name="twitter:description" content="web开发–cookie探秘相信熟悉web开发者对cookie一定不陌生，但相信很多人一开始都跟作者一样，仅仅只是知道这个东西，只知道简单地使用，那么今天我们就从它的源头谈起。 先看下维基百科的解释： Cookie，中文名称为“小型文本文件”或“小甜饼”，指某些网站为了辨别用户身份而储存在用户本地终端（Client Side）上的数据（通常经过加密）。定义于RFC2109。是网景公司的前雇员卢·蒙">
-<meta name="twitter:image" content="http://7xtgpc.com2.z0.glb.clouddn.com/cookies.png">
+<meta name="twitter:title" content="Python胶水语言特性实现(调用C)">
+<meta name="twitter:description" content="Python胶水语言特性实现(调用C)都说Python是一门胶水语言，那么它的胶水特性体现在哪里呢？ Python深受欢迎的主要原因不仅是它的代码的简洁，更重要的是它的可扩展性。纵观软件工程的历史，编程语言都不具备可扩展性，只能用这门语言已有的功能，而不能为语言增加新功能。而Python可以，Python可以添加额外的非Python的功能，都知道Python的底层是用C写的，因此Python和C可">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -60,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>web开发--cookie探秘 | siliconx&#39;s blog</title>
+<title>Python胶水语言特性实现(调用C) | siliconx&#39;s blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -264,11 +262,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-web开发-cookie探秘" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Python胶水语言特性实现-调用C" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/05/06/web开发-cookie探秘/" class="article-date">
-      <time datetime="2016-05-06T09:53:19.000Z" itemprop="datePublished">2016-05-06</time>
+      <a href="/2016/05/13/Python胶水语言特性实现-调用C/" class="article-date">
+      <time datetime="2016-05-13T11:04:45.000Z" itemprop="datePublished">2016-05-13</time>
 </a>
 
 
@@ -283,7 +281,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      web开发--cookie探秘
+      Python胶水语言特性实现(调用C)
     </h1>
   
 
@@ -294,7 +292,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -304,34 +302,28 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="web开发–cookie探秘"><a href="#web开发–cookie探秘" class="headerlink" title="web开发–cookie探秘"></a>web开发–cookie探秘</h2><p>相信熟悉web开发者对cookie一定不陌生，但相信很多人一开始都跟作者一样，仅仅只是知道这个东西，只知道简单地使用，那么今天我们就从它的源头谈起。</p>
-<p>先看下维基百科的解释：</p>
-<p>Cookie，中文名称为“小型文本文件”或“小甜饼”，指某些网站为了辨别用户身份而储存在用户本地终端（Client Side）上的数据（通常经过加密）。定义于RFC2109。是网景公司的前雇员卢·蒙特利在1993年3月的发明。</p>
-<p>嗯，解释就酱，很简单，说白了就是一种保存一些信息的文本文件，它以键值对的形式保存在浏览器中。</p>
+        <h2 id="Python胶水语言特性实现-调用C"><a href="#Python胶水语言特性实现-调用C" class="headerlink" title="Python胶水语言特性实现(调用C)"></a>Python胶水语言特性实现(调用C)</h2><p>都说Python是一门胶水语言，那么它的胶水特性体现在哪里呢？</p>
+<p>Python深受欢迎的主要原因不仅是它的代码的简洁，更重要的是它的可扩展性。纵观软件工程的历史，编程语言都不具备可扩展性，只能用这门语言已<br>有的功能，而不能为语言增加新功能。而Python可以，Python可以添加额外的非Python的功能，都知道Python的底层是用C写的，因此Python和C<br>可以无缝对接，即以胶水的形式去与C/C 粘合。<br>通常，Python粘合C/C 的主要原因是性能这个瓶颈，都知道由于解释型语言是在运行时动态地解释代码，这导致其运行速度比编译型语言要慢。我们可以<br>先做一个简单的代码性能测试，看看瓶颈在哪里，然后把瓶颈部分在扩展中实现会是一个比较简单有效的做法。可以起到立竿见影的效果而且无需花费太多<br>的时间与精力。</p>
 <a id="more"></a>
-<p>然后再举个栗子：</p>
-<p>大家都有登录某网站的经历，登录页面一般都有一个记住密码/下次自动登陆的选项，勾选以后下次可以直接访问而不需要再次登录。然而，登录一个网站的过程无非就是服务端获取到从客户端发送的账号密码等信息与数据库里保存的信息进行匹配，如果匹配成功，则说明登录成功，否则登录失败。但是，众所周知，http是无状态协议，一旦数据交换完毕，客户端与服务器端的连接就会关闭，再次交换数据需要建立新的连接，这就意味着服务器无法从连接上记录客户端之前的请求。这样的话，当用户登录了一个网站，等他点击进入另外一个页面时，又会回到没有登录的状态。http的这种机制严重阻碍了交互式Web应用程序的实现，为了弥补这一缺陷，聪明的猿类发明了cookie。通过请求携带的cookie中的信息，服务端可以识别用户并做出适当的响应。</p>
-<p>当然，cookie不是随便给的，尤其是关于个人信息方面的东西。一般来说，当用户成功登录一个网站后，服务端就发送一端包含一些能唯一标识这个用户的cookie凭证。一般这个cookie的值由用户的账号之类的信息经某种加密算法计算出来，具体实现因网站而异，在python-flask中，cookie由response对象的set_cookie(key,value)方法创建cookie，可以添加过期时间参数。当服务端给浏览器设下cookie后，浏览器以后发送的所有请求都将会携带上cookie，直到这个cookie过期，这样服务端就可以通过cookie去判读发送这个请求的用户是否登录以实现不同的功能了。</p>
-<p>由此可见，cookie的安全级别非常高，如果有人窃取了用户在某个网站上的cookie，那么他可以凭这个cookie去冒充原来的用户访问网站以达到某种目的。当然，在正常上网的情况下，cookie不容易被窃取。</p>
-<p>下面来看看实际操作:</p>
-<p>访问github首页(已登录),打开chrome的开发者工具，选择network，找到github.com记录，点击查看cookie，可以看到如下记录：<br><img src="http://7xtgpc.com2.z0.glb.clouddn.com/cookies.png" alt="img"><br>request cookies是浏览器发送请求时发送的cookie</p>
-<p>response cookies 是服务器给浏览器发送的cookie</p>
-<p>cookie的各个属性：</p>
-<p>Name：cookie的名字(键)。</p>
-<p>Value：cookie的值。</p>
-<p>Domain: cookie的域名，cookie是不可跨域名的。域名<a href="http://www.google.com颁发的Cookie不会被提交到域名www.zhihu.com去。这是由cookie的隐私安全机制决定的。隐私安全机制能够禁止网站非法获取其他网站的cookie。" target="_blank" rel="noopener">www.google.com颁发的Cookie不会被提交到域名www.zhihu.com去。这是由cookie的隐私安全机制决定的。隐私安全机制能够禁止网站非法获取其他网站的cookie。</a></p>
-<p>Path: cookie的路径，domain属性决定运行访问Cookie的域名，而path属性决定允许访问cookie的路径,一般情况下，cookie的path是”/“,也就是该域名下的所有路径均可使用，如果设定了特定的path，那么这个cookie只能在相应的路径下使用。</p>
-<p>Expires：cookie的过期时间，cookie在过期时间之内是持续有效的。也有永久cookie，除非手动清除，否则不会自动消失。</p>
-<p>Secure: cookie的安全属性，HTTP协议不仅是无状态的，而且是不安全的。使用HTTP协议的数据不经过任何加密就直接在网络上传播，有被截获的可能。使用HTTP协议传输很机密的内容是一种隐患。如果不希望Cookie在HTTP等非安全协议中传输，可以设置Cookie的secure属性为true。浏览器只会在HTTPS和SSL等安全协议中传输此类Cookie。</p>
-<p>cookie的分类：</p>
-<p>Cookie总是保存在客户端中，按在客户端中的存储位置，可分为内存Cookie和硬盘Cookie。</p>
-<p>内存Cookie由浏览器维护，保存在内存中，浏览器关闭后就消失了，其存在时间是短暂的。<br>硬盘Cookie保存在硬盘里，有一个过期时间，除非手动清理或到了过期时间，硬盘Cookie不会被删除，其存在时间是长期的。所以，按存在时间，可分为非持久Cookie和持久Cookie。</p>
-<p>cookie的弊端：</p>
-<pre><code>虽然cookie给开发者和用户带来了许多便利，但它不可避免地暴露了许多弊端
-1.Cookie会被附加在每个HTTP请求中，所以无形中增加了流量，给原本已经拥堵不堪的网络带来更大的负担。
-2.由于在HTTP请求中的Cookie是明文传递的，被拦截后拦截者可以直接使用。（除非用HTTPS）
-3.Cookie的大小限制在4KB左右。对于复杂的存储需求来说是不够用的
-</code></pre><p>The End.</p>
+<p>下面我们就自己用C来创建一个Python扩展，并让 使用C扩展的Python代码 与 纯Python代码进行性能比较</p>
+<p>以求9999999以内的自守数(其任意次幂的末几位数字等于这个数本身的数。)为例。</p>
+<p>先看看如何创建Python扩展(Linux平台)</p>
+<p>首先，我们要建立的是一个 “库”，就像我们平常import xxx 或者from xxx import xxx 一样去导入我们创建的库。我们要建立的是将在Python内<br>运行的一个模块，因此我们的C代码要能很好地与Python代码进行双向地交互和数据共享。窃以为跨语言数据交互JSON是个不错的选择，却苦于C/C++不<br>能直接用，略显麻烦，这里还是用书上(《Python核心编程（第二版）》)介绍的数据转换的方法。</p>
+<p>C代码:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;python2.7/Python.h&gt;//注意#include&lt;Python.h&gt;可能会报错，应该是因为同时有PY27和PY3</span><br><span class="line">static PyObject * //用PyObject* 包装函数</span><br><span class="line">Extest_autonum(PyObject *self) &#123;//求解自守数，函数名前面应加上模块名和下划线&apos;_&apos;</span><br><span class="line">    long mul,number,k,ll,kk,i=0;</span><br><span class="line">    PyObject* retval;</span><br><span class="line">    for(number=0;number&lt;9999999;number++) &#123;</span><br><span class="line">        for(mul=number,k=1;(mul/=10)&gt;0;k*=10);</span><br><span class="line">        //由number的位数确定截取数字进行乘法时的系数k</span><br><span class="line">        kk=k*10; //kk为截取部分积时的系数</span><br><span class="line">        mul=0; //积的最后n位</span><br><span class="line">        ll=10; //ll为截取乘数相应位时的系数</span><br><span class="line">        while(k&gt;0) &#123;</span><br><span class="line">            mul=(mul+(number%(k*10))*(number%ll-number%(ll/10)))%kk;</span><br><span class="line">            //(部分积+截取被乘数的后N位*截取乘数的第M位)，%kk再截取部分积</span><br><span class="line">            k/=10; //k为截取被乘数时的系数</span><br><span class="line">            ll*=10;</span><br><span class="line">        &#125;</span><br><span class="line">        if(number==mul)&#123; //判断若为自守数则输出</span><br><span class="line">            i += 1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    retval = (PyObject*)Py_BuildValue(&quot;i&quot;, i);//将C的整形转成Python的整形</span><br><span class="line">    return retval;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">static PyMethodDef</span><br><span class="line">ExtestMethods[] = &#123;//列出被包装的函数，以便Python解释器能够导入并调用</span><br><span class="line">    &#123;&quot;autonum&quot;,Extest_autonum, METH_VARARGS&#125;,</span><br><span class="line">    &#123;NULL, NULL&#125;,//表示数组的结束</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void initExtest()&#123;//模块初始化函数</span><br><span class="line">    Py_InitModule(&quot;Extest&quot;, ExtestMethods);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>代码的具体解释请参考《Python核心编程(第二版)》倒数第二章。这里只说我们容易出问题的地方。</p>
+<p>注意这里的C代码无需经gcc或者其他编译器编译，下面我们会用Python代码调用gcc将代码编译成Python库</p>
+<p>Python代码(AutoNum.py)：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#coding:utf-8</span><br><span class="line">def autonum():</span><br><span class="line">    i = 0</span><br><span class="line">    sum_ = 0</span><br><span class="line">    while i &lt; (9999999):</span><br><span class="line">        li = []</span><br><span class="line">        for j in str(i):</span><br><span class="line">            li.append(i * int(j))</span><br><span class="line">        length = len(li) #列表长度与i的位数相等</span><br><span class="line">        a = 0</span><br><span class="line">        b = 0</span><br><span class="line">        d = -1</span><br><span class="line">        while (a &lt; length):</span><br><span class="line">            b = b + int(str(li[a])[d:]) * (10 ** (length + d))</span><br><span class="line">            a = a + 1</span><br><span class="line">            d = d - 1</span><br><span class="line">        if str(b)[-length:] == str(i):</span><br><span class="line">            sum_ += 1</span><br><span class="line">        i += 1</span><br><span class="line">    return sum_</span><br></pre></td></tr></table></figure>
+<p>编译:<br>创建setup.py</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#coding:utf-8</span><br><span class="line">from distutils.core import setup, Extension</span><br><span class="line"></span><br><span class="line">MOD = &quot;Extest&quot;</span><br><span class="line">setup(name=MOD, ext_modules=[</span><br><span class="line">    Extension(MOD, sources=[&quot;AutoNum.c&quot;])])</span><br></pre></td></tr></table></figure>
+<p>MOD表示编译好的Python模块的名字，sources表示上面的C代码的位置，这里用相对地址，setup.py和AutoNum.c放在同级。<br>终端运行python setup.py build<br>如果输出没有错误就行了，如果有很多警告，不要问为什么，我也不知道。<br>如果没有发生错误，再运行python setup.py install<br>如果这步也没有报错，那么说明这个库已经成功加到Python中了<br>这时你可以在你的Python目录(ubuntu是/usr/local/lib/python2.7/dist-packages)下看到Extest.so，这就是我们编译好以后的库，<br>像导入别的库一样导入这个自己写的库就OK了</p>
+<p>性能测试</p>
+<p>测试代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">#coding:utf-8</span><br><span class="line">import Extest//导入编译好的扩展</span><br><span class="line">import AutoNum//导入纯Python求自守数的模块</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line">def test():</span><br><span class="line">    # Python &amp; C</span><br><span class="line">    start1 = time.time() #开始时间</span><br><span class="line">    PYC = Extest.autonum()</span><br><span class="line">    print &quot;Python &amp; C:&quot;</span><br><span class="line">    print &quot;sum:&quot;,PYC</span><br><span class="line">    end1 = time.time() #结束时间</span><br><span class="line">    print &quot;used time:&quot;, end1 - start1</span><br><span class="line"></span><br><span class="line">   # 纯 Python</span><br><span class="line">    start2 = time.time()</span><br><span class="line">    Py = AutoNum.autonum()</span><br><span class="line">    print &quot;Only Python:&quot;</span><br><span class="line">    print &quot;sum:&quot;,Py</span><br><span class="line">    end2 = time.time()</span><br><span class="line">    print &quot;used time:&quot;, end2 - start2</span><br><span class="line"></span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    test()</span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Python &amp; C:</span><br><span class="line">sum: 14</span><br><span class="line">used time: 2.5386300087</span><br><span class="line"></span><br><span class="line">Only Python:</span><br><span class="line">sum: 14</span><br><span class="line">used time: 61.9156060219</span><br></pre></td></tr></table></figure>
+<p>差距可谓一目了然。不过另外有一点就是Python代码循环中用了较多的内建函数，这对性能的影响确实不小,后期再重构优化。<br>以上充分说明无论从扩展功能还是提高性能方面来说，用C扩展Python是Python非常明智的一个做法。<br>示例代码已上传至github:<a href="https://github.com/Xie-Zhibin/learn，详情请参考《Python核心编程(第二版)》。" target="_blank" rel="noopener">https://github.com/Xie-Zhibin/learn，详情请参考《Python核心编程(第二版)》。</a></p>
 
       
     </div>
@@ -340,13 +332,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/05/06/web开发-cookie探秘/">web开发--cookie探秘</a></p>
+        <p><span>本文标题:</span><a href="/2016/05/13/Python胶水语言特性实现-调用C/">Python胶水语言特性实现(调用C)</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">siliconx</a></p>
-        <p><span>发布时间:</span>2016-05-06, 17:53:19</p>
-        <p><span>最后更新:</span>2018-03-16, 16:37:28</p>
+        <p><span>发布时间:</span>2016-05-13, 19:04:45</p>
+        <p><span>最后更新:</span>2018-03-16, 16:53:44</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/05/06/web开发-cookie探秘/" title="web开发--cookie探秘">http://blog.siliconx.xyz/2016/05/06/web开发-cookie探秘/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://blog.siliconx.xyz/2016/05/06/web开发-cookie探秘/　　作者: siliconx" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/05/13/Python胶水语言特性实现-调用C/" title="Python胶水语言特性实现(调用C)">http://blog.siliconx.xyz/2016/05/13/Python胶水语言特性实现-调用C/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://blog.siliconx.xyz/2016/05/13/Python胶水语言特性实现-调用C/　　作者: siliconx" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -359,15 +351,15 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/05/13/Python胶水语言特性实现-调用C/">
-                    Python胶水语言特性实现(调用C)
+                <a href="/2016/07/02/树莓派初体验/">
+                    树莓派初体验
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/05/02/CPP入门之贪吃蛇/">
-                    C++入门之贪吃蛇
+                <a href="/2016/05/06/web开发-cookie探秘/">
+                    web开发--cookie探秘
                 </a>
             </div>
         
@@ -379,7 +371,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#web开发–cookie探秘"><span class="toc-number">1.</span> <span class="toc-text">web开发–cookie探秘</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Python胶水语言特性实现-调用C"><span class="toc-number">1.</span> <span class="toc-text">Python胶水语言特性实现(调用C)</span></a></li></ol>
         
     </div>
     <style>
@@ -415,7 +407,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"web开发--cookie探秘　| siliconx's blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Python胶水语言特性实现(调用C)　| siliconx's blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -449,7 +441,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/05/13/Python胶水语言特性实现-调用C/" title="上一篇: Python胶水语言特性实现(调用C)">
+            <a href="/2016/07/02/树莓派初体验/" title="上一篇: 树莓派初体验">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -457,7 +449,7 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/05/02/CPP入门之贪吃蛇/" title="下一篇: C++入门之贪吃蛇">
+            <a href="/2016/05/06/web开发-cookie探秘/" title="下一篇: web开发--cookie探秘">
                 <i class="fa fa-angle-right"></i>
             </a>
         

@@ -15,20 +15,18 @@
 
 
 
-<meta name="description" content="web开发–cookie探秘相信熟悉web开发者对cookie一定不陌生，但相信很多人一开始都跟作者一样，仅仅只是知道这个东西，只知道简单地使用，那么今天我们就从它的源头谈起。 先看下维基百科的解释： Cookie，中文名称为“小型文本文件”或“小甜饼”，指某些网站为了辨别用户身份而储存在用户本地终端（Client Side）上的数据（通常经过加密）。定义于RFC2109。是网景公司的前雇员卢·蒙">
-<meta name="keywords" content="web">
+<meta name="description" content="趁着十一假期，将Python复习了一遍，重新看了一遍《python核心编程》，把原来不太清楚的或者被忽略的一些盲点难点再次理解了一遍，总结如下。">
+<meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="web开发--cookie探秘">
-<meta property="og:url" content="http://blog.siliconx.xyz/2016/05/06/web开发-cookie探秘/index.html">
+<meta property="og:title" content="Think in Python">
+<meta property="og:url" content="http://blog.siliconx.xyz/2016/10/05/ThinkInPython/index.html">
 <meta property="og:site_name" content="siliconx&#39;s blog">
-<meta property="og:description" content="web开发–cookie探秘相信熟悉web开发者对cookie一定不陌生，但相信很多人一开始都跟作者一样，仅仅只是知道这个东西，只知道简单地使用，那么今天我们就从它的源头谈起。 先看下维基百科的解释： Cookie，中文名称为“小型文本文件”或“小甜饼”，指某些网站为了辨别用户身份而储存在用户本地终端（Client Side）上的数据（通常经过加密）。定义于RFC2109。是网景公司的前雇员卢·蒙">
+<meta property="og:description" content="趁着十一假期，将Python复习了一遍，重新看了一遍《python核心编程》，把原来不太清楚的或者被忽略的一些盲点难点再次理解了一遍，总结如下。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://7xtgpc.com2.z0.glb.clouddn.com/cookies.png">
-<meta property="og:updated_time" content="2018-03-16T08:37:28.496Z">
+<meta property="og:updated_time" content="2018-03-16T08:58:32.147Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="web开发--cookie探秘">
-<meta name="twitter:description" content="web开发–cookie探秘相信熟悉web开发者对cookie一定不陌生，但相信很多人一开始都跟作者一样，仅仅只是知道这个东西，只知道简单地使用，那么今天我们就从它的源头谈起。 先看下维基百科的解释： Cookie，中文名称为“小型文本文件”或“小甜饼”，指某些网站为了辨别用户身份而储存在用户本地终端（Client Side）上的数据（通常经过加密）。定义于RFC2109。是网景公司的前雇员卢·蒙">
-<meta name="twitter:image" content="http://7xtgpc.com2.z0.glb.clouddn.com/cookies.png">
+<meta name="twitter:title" content="Think in Python">
+<meta name="twitter:description" content="趁着十一假期，将Python复习了一遍，重新看了一遍《python核心编程》，把原来不太清楚的或者被忽略的一些盲点难点再次理解了一遍，总结如下。">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -60,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>web开发--cookie探秘 | siliconx&#39;s blog</title>
+<title>Think in Python | siliconx&#39;s blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -264,11 +262,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-web开发-cookie探秘" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-ThinkInPython" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/05/06/web开发-cookie探秘/" class="article-date">
-      <time datetime="2016-05-06T09:53:19.000Z" itemprop="datePublished">2016-05-06</time>
+      <a href="/2016/10/05/ThinkInPython/" class="article-date">
+      <time datetime="2016-10-05T07:07:23.000Z" itemprop="datePublished">2016-10-05</time>
 </a>
 
 
@@ -283,7 +281,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      web开发--cookie探秘
+      Think in Python
     </h1>
   
 
@@ -294,7 +292,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -304,34 +302,49 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="web开发–cookie探秘"><a href="#web开发–cookie探秘" class="headerlink" title="web开发–cookie探秘"></a>web开发–cookie探秘</h2><p>相信熟悉web开发者对cookie一定不陌生，但相信很多人一开始都跟作者一样，仅仅只是知道这个东西，只知道简单地使用，那么今天我们就从它的源头谈起。</p>
-<p>先看下维基百科的解释：</p>
-<p>Cookie，中文名称为“小型文本文件”或“小甜饼”，指某些网站为了辨别用户身份而储存在用户本地终端（Client Side）上的数据（通常经过加密）。定义于RFC2109。是网景公司的前雇员卢·蒙特利在1993年3月的发明。</p>
-<p>嗯，解释就酱，很简单，说白了就是一种保存一些信息的文本文件，它以键值对的形式保存在浏览器中。</p>
+        <p>趁着十一假期，将Python复习了一遍，重新看了一遍《python核心编程》，把原来不太清楚的或者被忽略的一些盲点难点再次理解了一遍，总结如下。</p>
 <a id="more"></a>
-<p>然后再举个栗子：</p>
-<p>大家都有登录某网站的经历，登录页面一般都有一个记住密码/下次自动登陆的选项，勾选以后下次可以直接访问而不需要再次登录。然而，登录一个网站的过程无非就是服务端获取到从客户端发送的账号密码等信息与数据库里保存的信息进行匹配，如果匹配成功，则说明登录成功，否则登录失败。但是，众所周知，http是无状态协议，一旦数据交换完毕，客户端与服务器端的连接就会关闭，再次交换数据需要建立新的连接，这就意味着服务器无法从连接上记录客户端之前的请求。这样的话，当用户登录了一个网站，等他点击进入另外一个页面时，又会回到没有登录的状态。http的这种机制严重阻碍了交互式Web应用程序的实现，为了弥补这一缺陷，聪明的猿类发明了cookie。通过请求携带的cookie中的信息，服务端可以识别用户并做出适当的响应。</p>
-<p>当然，cookie不是随便给的，尤其是关于个人信息方面的东西。一般来说，当用户成功登录一个网站后，服务端就发送一端包含一些能唯一标识这个用户的cookie凭证。一般这个cookie的值由用户的账号之类的信息经某种加密算法计算出来，具体实现因网站而异，在python-flask中，cookie由response对象的set_cookie(key,value)方法创建cookie，可以添加过期时间参数。当服务端给浏览器设下cookie后，浏览器以后发送的所有请求都将会携带上cookie，直到这个cookie过期，这样服务端就可以通过cookie去判读发送这个请求的用户是否登录以实现不同的功能了。</p>
-<p>由此可见，cookie的安全级别非常高，如果有人窃取了用户在某个网站上的cookie，那么他可以凭这个cookie去冒充原来的用户访问网站以达到某种目的。当然，在正常上网的情况下，cookie不容易被窃取。</p>
-<p>下面来看看实际操作:</p>
-<p>访问github首页(已登录),打开chrome的开发者工具，选择network，找到github.com记录，点击查看cookie，可以看到如下记录：<br><img src="http://7xtgpc.com2.z0.glb.clouddn.com/cookies.png" alt="img"><br>request cookies是浏览器发送请求时发送的cookie</p>
-<p>response cookies 是服务器给浏览器发送的cookie</p>
-<p>cookie的各个属性：</p>
-<p>Name：cookie的名字(键)。</p>
-<p>Value：cookie的值。</p>
-<p>Domain: cookie的域名，cookie是不可跨域名的。域名<a href="http://www.google.com颁发的Cookie不会被提交到域名www.zhihu.com去。这是由cookie的隐私安全机制决定的。隐私安全机制能够禁止网站非法获取其他网站的cookie。" target="_blank" rel="noopener">www.google.com颁发的Cookie不会被提交到域名www.zhihu.com去。这是由cookie的隐私安全机制决定的。隐私安全机制能够禁止网站非法获取其他网站的cookie。</a></p>
-<p>Path: cookie的路径，domain属性决定运行访问Cookie的域名，而path属性决定允许访问cookie的路径,一般情况下，cookie的path是”/“,也就是该域名下的所有路径均可使用，如果设定了特定的path，那么这个cookie只能在相应的路径下使用。</p>
-<p>Expires：cookie的过期时间，cookie在过期时间之内是持续有效的。也有永久cookie，除非手动清除，否则不会自动消失。</p>
-<p>Secure: cookie的安全属性，HTTP协议不仅是无状态的，而且是不安全的。使用HTTP协议的数据不经过任何加密就直接在网络上传播，有被截获的可能。使用HTTP协议传输很机密的内容是一种隐患。如果不希望Cookie在HTTP等非安全协议中传输，可以设置Cookie的secure属性为true。浏览器只会在HTTPS和SSL等安全协议中传输此类Cookie。</p>
-<p>cookie的分类：</p>
-<p>Cookie总是保存在客户端中，按在客户端中的存储位置，可分为内存Cookie和硬盘Cookie。</p>
-<p>内存Cookie由浏览器维护，保存在内存中，浏览器关闭后就消失了，其存在时间是短暂的。<br>硬盘Cookie保存在硬盘里，有一个过期时间，除非手动清理或到了过期时间，硬盘Cookie不会被删除，其存在时间是长期的。所以，按存在时间，可分为非持久Cookie和持久Cookie。</p>
-<p>cookie的弊端：</p>
-<pre><code>虽然cookie给开发者和用户带来了许多便利，但它不可避免地暴露了许多弊端
-1.Cookie会被附加在每个HTTP请求中，所以无形中增加了流量，给原本已经拥堵不堪的网络带来更大的负担。
-2.由于在HTTP请求中的Cookie是明文传递的，被拦截后拦截者可以直接使用。（除非用HTTPS）
-3.Cookie的大小限制在4KB左右。对于复杂的存储需求来说是不够用的
-</code></pre><p>The End.</p>
+<hr>
+<h4 id="1-迭代器和iter-函数"><a href="#1-迭代器和iter-函数" class="headerlink" title="1.迭代器和iter()函数"></a>1.迭代器和iter()函数</h4><ul>
+<li>根本上说，迭代器就是一个有next()方法的对象，而不是像序列一样是通过索引来计数的。当自己或者一个循环机制（例如for循环）需要下一项时，调用迭代器的next()方法就可以获得它。条目全部取出后会引发一个StopIteration异常表示迭代完成。</li>
+<li>迭代器的限制：不能向后移动，不能回到开始，也不能复制一个迭代器。</li>
+<li>对一个对象调用iter()可以得到它的迭代器,如果有两个参数(iter(func, sentinel))，它会反复调用func直到下一个值为sentinel</li>
+<li>一般的可迭代器对象有，序列，字典，文件。</li>
+<li>迭代器（Iterable） 只是对象每次返回特定成员的一种能力</li>
+</ul>
+<hr>
+<h4 id="2-函数式编程"><a href="#2-函数式编程" class="headerlink" title="2.函数式编程"></a>2.函数式编程</h4><h5 id="A-函数（方法）装饰器"><a href="#A-函数（方法）装饰器" class="headerlink" title="A.函数（方法）装饰器"></a>A.函数（方法）装饰器</h5><p>装饰器实际就是一个返回函数的高阶函数，他们接受函数对象并返回了函数对象。从本质上看，这些特征引入了Spring框架的核心概念AOP(Aspect Oriented Programming, 面向切面编程)。<br>对于无参装饰器，定义如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@deco</span><br><span class="line">def func():</span><br><span class="line">    pass</span><br></pre></td></tr></table></figure></p>
+<p>等价于<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">func = deco(func)</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>对于有参装饰器，需要编写一个返回修饰器的高阶函数，如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@decomaker(deco_args)</span><br><span class="line">def func():</span><br><span class="line">	pass</span><br></pre></td></tr></table></figure></p>
+<p>等价于<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">func = decomaker(deco_args)(func)</span><br></pre></td></tr></table></figure></p>
+<p>这就相当于带有deco_args的decomaker函数执行完成以后返回了一个函数对象，该函数对象即为装饰器。<br>参考廖雪峰的文章：<a href="http://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000/001386819879946007bbf6ad052463ab18034f0254bf355000" target="_blank" rel="noopener">http://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000/001386819879946007bbf6ad052463ab18034f0254bf355000</a></p>
+<hr>
+<h5 id="B-偏函数"><a href="#B-偏函数" class="headerlink" title="B.偏函数"></a>B.偏函数</h5><blockquote>
+<p>与数学意义上的偏函数不同，python中的偏函数主要是把一个函数的某些参数固定（设置默认值），返回一个新的函数，使得更加容易地调用这个新函数。<br>python的functools模块的partial()函数提供了相应的功能。<br>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;base_two = functools.partial(int, base = 2)  # 等价于：</span><br><span class="line">&gt;base_two(x) == int(x, base = 2)</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>注意：警惕关键字, 固定参数总是放在运行时刻参数的左边，比如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;base_two = functools.partial(int, 2)  # 将得到</span><br><span class="line">&gt;base_two(x) == int(2, x)</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>这会得到一个错误的结果。</p>
+</blockquote>
+<hr>
+<h5 id="C-闭包"><a href="#C-闭包" class="headerlink" title="C.闭包"></a>C.闭包</h5><p>如果在一个内部函数里，对在外部作用域(但不是在全局作用域)的变量进行引用，那么内部函数就被认为是闭包(closure).<br>闭包在JS中使用得比较多，在Python中相对少见，不过有时候即使用了也没注意到，比如在装饰器中。浅显地说，要形成闭包，首先得有一个嵌套的函数，即函数中定义了另一个函数，闭包则是一个集合，它包括了外部函数的局部变量，这些局部变量在外部函数返回后也继续存在，并能被内部函数引用,不会像普通的局部变量在函数调用结束时便被销毁。<br>闭包的词法变量既不属于全局名称空间也不属于局部名称空间，而属于其他的名称空间，带着“流浪”的作用域。<br>和闭包相关的就是 <code>__closure__</code> 属性。该属性定义的是一个包含 cell 对象的元组，其中元组中的每一个 cell 对象用来保存作用域中变量的值，如果没有闭包的形成，则该属性值为None。<br>参考这篇文章：<a href="https://serholiu.com/python-closures" target="_blank" rel="noopener">https://serholiu.com/python-closures</a></p>
+<hr>
+<h5 id="D-生成器"><a href="#D-生成器" class="headerlink" title="D.生成器"></a>D.生成器</h5><p>从语法上讲，生成器是一个带有yield语句的函数。一个函数或者子程序只返回一次。<br>一个生成器函数的定义很像一个普通的函数，除了当它要生成一个值的时候，使用yield关键字而不是return。<br>调用一个普通的Python函数时，一般是从函数的第一行代码开始执行，结束于return语句、异常或者函数结束（可以看作隐式的返回None）。一旦函数将控制权交还给调用者，就意味着全部结束。函数中做的所有工作以及保存在局部变量中的数据都将丢失。再次调用这个函数时，一切都将从头创建。<br>与迭代器相似，生成器以另外的方式来运作：当到达一个真正的返回或者函数没有更多的值返回（调用next()），一个StopIteration异常就会抛出。<br>当一个生成器函数调用yield，生成器函数的“状态”会被冻结，所有的变量的值会被保留下来，下一行要执行的代码的位置也会被记录，直到再次调用next()。一旦next()再次被调用，生成器函数会从它上次离开的地方开始。</p>
+<hr>
+<h4 id="3-面向对象编程"><a href="#3-面向对象编程" class="headerlink" title="3.面向对象编程"></a>3.面向对象编程</h4><h5 id="A-类"><a href="#A-类" class="headerlink" title="A. 类"></a>A. 类</h5><p>类属性包括 数据属性 及 函数属性（方法）。类数据属性是静态的，类似于Java中被static修饰的数据域，与之相对的是实例数据属性。<br>在类中直接定义的数据属性为静态属性，相反的，在类中定义的方法默认为实例方法，除非用@staticmenthod修饰，才能成为静态方法。</p>
+<hr>
+<h5 id="B-del-解构器-方法"><a href="#B-del-解构器-方法" class="headerlink" title="B.__del__()解构器 方法"></a>B.<code>__del__()</code>解构器 方法</h5><p>由于Python具有垃圾对象回收机制（引用计数），这个方法要直到该实例对象所有的引用都被清除掉后才会执行。Python中的解构器是在实例释放前提供特殊处理功能的方法。<br>注意：不要忘记首先调用父类的<code>__del__()</code>.</p>
+<hr>
+<h5 id="C-静态方法与类方法"><a href="#C-静态方法与类方法" class="headerlink" title="C.静态方法与类方法"></a>C.静态方法与类方法</h5><p>Python中的静态方法（用@staticmethod修饰）与Java、C++中的一样，不必多说。<br>对于类方法(用@classmethod修饰)，类似实例方法需要一个实例（self）作为第一个参数一样，需要类作为第一个参数，它也是由解释器自动传递给方法的，类不需要特别的命名，类似self，不过通常会使用cls。<br>静态方法和类方法均可以直接通过类来调用，而由于类方法在调用时解释器会自动传递类本身作为第一个参数，可以在一些情况下简化代码。<br>类方法是为了访问类属性更加方便。<br>参考：<br><a href="http://www.jianshu.com/p/212b6fdb2c50" target="_blank" rel="noopener">http://www.jianshu.com/p/212b6fdb2c50</a><br><a href="https://www.zhihu.com/question/20021164" target="_blank" rel="noopener">https://www.zhihu.com/question/20021164</a></p>
+<hr>
+<h6 id="D-私有化"><a href="#D-私有化" class="headerlink" title="D.私有化"></a>D.私有化</h6><p>默认情况下，属性在Python中都是“公开的”。很多OO语言给数据加上一些可见性，只提供访问函数来访问其值。这就是熟知的实现隐藏，是对象封装中的一个关键部分。</p>
+<ul>
+<li>双下划线<br>Python为类元素（属性和方法）的私有性提供初步的形式。由双下划线开始的属性在运行时被“混淆”，所以直接访问是不允许的。实际上，这会在名字前面加上下划线和类名。<br>这种名字混淆的另一个目的,是为了保护变量不与父类名称空间相冲突。</li>
+<li>单下划线<br>简单的模块级私有化只需要在属性名前使用一个单下划线字符。防止模块的属性用”from modules import *”来加载。</li>
+</ul>
 
       
     </div>
@@ -340,13 +353,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/05/06/web开发-cookie探秘/">web开发--cookie探秘</a></p>
+        <p><span>本文标题:</span><a href="/2016/10/05/ThinkInPython/">Think in Python</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">siliconx</a></p>
-        <p><span>发布时间:</span>2016-05-06, 17:53:19</p>
-        <p><span>最后更新:</span>2018-03-16, 16:37:28</p>
+        <p><span>发布时间:</span>2016-10-05, 15:07:23</p>
+        <p><span>最后更新:</span>2018-03-16, 16:58:32</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/05/06/web开发-cookie探秘/" title="web开发--cookie探秘">http://blog.siliconx.xyz/2016/05/06/web开发-cookie探秘/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://blog.siliconx.xyz/2016/05/06/web开发-cookie探秘/　　作者: siliconx" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/10/05/ThinkInPython/" title="Think in Python">http://blog.siliconx.xyz/2016/10/05/ThinkInPython/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://blog.siliconx.xyz/2016/10/05/ThinkInPython/　　作者: siliconx" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -359,15 +372,15 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/05/13/Python胶水语言特性实现-调用C/">
-                    Python胶水语言特性实现(调用C)
+                <a href="/2018/03/16/hello-world/">
+                    Hello World
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/05/02/CPP入门之贪吃蛇/">
-                    C++入门之贪吃蛇
+                <a href="/2016/09/28/JAVA学习笔记/">
+                    JAVA学习笔记
                 </a>
             </div>
         
@@ -379,7 +392,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#web开发–cookie探秘"><span class="toc-number">1.</span> <span class="toc-text">web开发–cookie探秘</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-迭代器和iter-函数"><span class="toc-number">1.</span> <span class="toc-text">1.迭代器和iter()函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-函数式编程"><span class="toc-number">2.</span> <span class="toc-text">2.函数式编程</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#A-函数（方法）装饰器"><span class="toc-number">2.1.</span> <span class="toc-text">A.函数（方法）装饰器</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#B-偏函数"><span class="toc-number">2.2.</span> <span class="toc-text">B.偏函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#C-闭包"><span class="toc-number">2.3.</span> <span class="toc-text">C.闭包</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#D-生成器"><span class="toc-number">2.4.</span> <span class="toc-text">D.生成器</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-面向对象编程"><span class="toc-number">3.</span> <span class="toc-text">3.面向对象编程</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#A-类"><span class="toc-number">3.1.</span> <span class="toc-text">A. 类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#B-del-解构器-方法"><span class="toc-number">3.2.</span> <span class="toc-text">B.__del__()解构器 方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#C-静态方法与类方法"><span class="toc-number">3.3.</span> <span class="toc-text">C.静态方法与类方法</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#D-私有化"><span class="toc-number">3.3.1.</span> <span class="toc-text">D.私有化</span></a></li></ol></li></ol></li></ol>
         
     </div>
     <style>
@@ -415,7 +428,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"web开发--cookie探秘　| siliconx's blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Think in Python　| siliconx's blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -449,7 +462,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/05/13/Python胶水语言特性实现-调用C/" title="上一篇: Python胶水语言特性实现(调用C)">
+            <a href="/2018/03/16/hello-world/" title="上一篇: Hello World">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -457,7 +470,7 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/05/02/CPP入门之贪吃蛇/" title="下一篇: C++入门之贪吃蛇">
+            <a href="/2016/09/28/JAVA学习笔记/" title="下一篇: JAVA学习笔记">
                 <i class="fa fa-angle-right"></i>
             </a>
         

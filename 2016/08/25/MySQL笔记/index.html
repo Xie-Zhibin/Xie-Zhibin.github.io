@@ -15,20 +15,18 @@
 
 
 
-<meta name="description" content="web开发–cookie探秘相信熟悉web开发者对cookie一定不陌生，但相信很多人一开始都跟作者一样，仅仅只是知道这个东西，只知道简单地使用，那么今天我们就从它的源头谈起。 先看下维基百科的解释： Cookie，中文名称为“小型文本文件”或“小甜饼”，指某些网站为了辨别用户身份而储存在用户本地终端（Client Side）上的数据（通常经过加密）。定义于RFC2109。是网景公司的前雇员卢·蒙">
-<meta name="keywords" content="web">
+<meta name="description" content="MySQL笔记使用MySQL数据库也有一阵子时间了，因为不是DBA，所有也很少去研究高级的问题，只停留在增删查改和编写存储过程及MySQL函数等一些基础操作上，现在把目前遇到的自觉为比较重要的知识记下来，同时方便自己以后查阅回忆。">
+<meta name="keywords" content="MySQL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="web开发--cookie探秘">
-<meta property="og:url" content="http://blog.siliconx.xyz/2016/05/06/web开发-cookie探秘/index.html">
+<meta property="og:title" content="MySQL笔记">
+<meta property="og:url" content="http://blog.siliconx.xyz/2016/08/25/MySQL笔记/index.html">
 <meta property="og:site_name" content="siliconx&#39;s blog">
-<meta property="og:description" content="web开发–cookie探秘相信熟悉web开发者对cookie一定不陌生，但相信很多人一开始都跟作者一样，仅仅只是知道这个东西，只知道简单地使用，那么今天我们就从它的源头谈起。 先看下维基百科的解释： Cookie，中文名称为“小型文本文件”或“小甜饼”，指某些网站为了辨别用户身份而储存在用户本地终端（Client Side）上的数据（通常经过加密）。定义于RFC2109。是网景公司的前雇员卢·蒙">
+<meta property="og:description" content="MySQL笔记使用MySQL数据库也有一阵子时间了，因为不是DBA，所有也很少去研究高级的问题，只停留在增删查改和编写存储过程及MySQL函数等一些基础操作上，现在把目前遇到的自觉为比较重要的知识记下来，同时方便自己以后查阅回忆。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://7xtgpc.com2.z0.glb.clouddn.com/cookies.png">
-<meta property="og:updated_time" content="2018-03-16T08:37:28.496Z">
+<meta property="og:updated_time" content="2018-03-16T08:55:45.756Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="web开发--cookie探秘">
-<meta name="twitter:description" content="web开发–cookie探秘相信熟悉web开发者对cookie一定不陌生，但相信很多人一开始都跟作者一样，仅仅只是知道这个东西，只知道简单地使用，那么今天我们就从它的源头谈起。 先看下维基百科的解释： Cookie，中文名称为“小型文本文件”或“小甜饼”，指某些网站为了辨别用户身份而储存在用户本地终端（Client Side）上的数据（通常经过加密）。定义于RFC2109。是网景公司的前雇员卢·蒙">
-<meta name="twitter:image" content="http://7xtgpc.com2.z0.glb.clouddn.com/cookies.png">
+<meta name="twitter:title" content="MySQL笔记">
+<meta name="twitter:description" content="MySQL笔记使用MySQL数据库也有一阵子时间了，因为不是DBA，所有也很少去研究高级的问题，只停留在增删查改和编写存储过程及MySQL函数等一些基础操作上，现在把目前遇到的自觉为比较重要的知识记下来，同时方便自己以后查阅回忆。">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -60,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>web开发--cookie探秘 | siliconx&#39;s blog</title>
+<title>MySQL笔记 | siliconx&#39;s blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -264,11 +262,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-web开发-cookie探秘" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-MySQL笔记" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/05/06/web开发-cookie探秘/" class="article-date">
-      <time datetime="2016-05-06T09:53:19.000Z" itemprop="datePublished">2016-05-06</time>
+      <a href="/2016/08/25/MySQL笔记/" class="article-date">
+      <time datetime="2016-08-24T22:16:09.000Z" itemprop="datePublished">2016-08-25</time>
 </a>
 
 
@@ -283,7 +281,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      web开发--cookie探秘
+      MySQL笔记
     </h1>
   
 
@@ -294,7 +292,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -304,34 +302,24 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="web开发–cookie探秘"><a href="#web开发–cookie探秘" class="headerlink" title="web开发–cookie探秘"></a>web开发–cookie探秘</h2><p>相信熟悉web开发者对cookie一定不陌生，但相信很多人一开始都跟作者一样，仅仅只是知道这个东西，只知道简单地使用，那么今天我们就从它的源头谈起。</p>
-<p>先看下维基百科的解释：</p>
-<p>Cookie，中文名称为“小型文本文件”或“小甜饼”，指某些网站为了辨别用户身份而储存在用户本地终端（Client Side）上的数据（通常经过加密）。定义于RFC2109。是网景公司的前雇员卢·蒙特利在1993年3月的发明。</p>
-<p>嗯，解释就酱，很简单，说白了就是一种保存一些信息的文本文件，它以键值对的形式保存在浏览器中。</p>
+        <h2 id="MySQL笔记"><a href="#MySQL笔记" class="headerlink" title="MySQL笔记"></a>MySQL笔记</h2><p>使用MySQL数据库也有一阵子时间了，因为不是DBA，所有也很少去研究高级的问题，只停留在增删查改和编写存储过程及MySQL函数等一些基础操作上，现在把目前遇到的自觉为比较重要的知识记下来，同时方便自己以后查阅回忆。</p>
 <a id="more"></a>
-<p>然后再举个栗子：</p>
-<p>大家都有登录某网站的经历，登录页面一般都有一个记住密码/下次自动登陆的选项，勾选以后下次可以直接访问而不需要再次登录。然而，登录一个网站的过程无非就是服务端获取到从客户端发送的账号密码等信息与数据库里保存的信息进行匹配，如果匹配成功，则说明登录成功，否则登录失败。但是，众所周知，http是无状态协议，一旦数据交换完毕，客户端与服务器端的连接就会关闭，再次交换数据需要建立新的连接，这就意味着服务器无法从连接上记录客户端之前的请求。这样的话，当用户登录了一个网站，等他点击进入另外一个页面时，又会回到没有登录的状态。http的这种机制严重阻碍了交互式Web应用程序的实现，为了弥补这一缺陷，聪明的猿类发明了cookie。通过请求携带的cookie中的信息，服务端可以识别用户并做出适当的响应。</p>
-<p>当然，cookie不是随便给的，尤其是关于个人信息方面的东西。一般来说，当用户成功登录一个网站后，服务端就发送一端包含一些能唯一标识这个用户的cookie凭证。一般这个cookie的值由用户的账号之类的信息经某种加密算法计算出来，具体实现因网站而异，在python-flask中，cookie由response对象的set_cookie(key,value)方法创建cookie，可以添加过期时间参数。当服务端给浏览器设下cookie后，浏览器以后发送的所有请求都将会携带上cookie，直到这个cookie过期，这样服务端就可以通过cookie去判读发送这个请求的用户是否登录以实现不同的功能了。</p>
-<p>由此可见，cookie的安全级别非常高，如果有人窃取了用户在某个网站上的cookie，那么他可以凭这个cookie去冒充原来的用户访问网站以达到某种目的。当然，在正常上网的情况下，cookie不容易被窃取。</p>
-<p>下面来看看实际操作:</p>
-<p>访问github首页(已登录),打开chrome的开发者工具，选择network，找到github.com记录，点击查看cookie，可以看到如下记录：<br><img src="http://7xtgpc.com2.z0.glb.clouddn.com/cookies.png" alt="img"><br>request cookies是浏览器发送请求时发送的cookie</p>
-<p>response cookies 是服务器给浏览器发送的cookie</p>
-<p>cookie的各个属性：</p>
-<p>Name：cookie的名字(键)。</p>
-<p>Value：cookie的值。</p>
-<p>Domain: cookie的域名，cookie是不可跨域名的。域名<a href="http://www.google.com颁发的Cookie不会被提交到域名www.zhihu.com去。这是由cookie的隐私安全机制决定的。隐私安全机制能够禁止网站非法获取其他网站的cookie。" target="_blank" rel="noopener">www.google.com颁发的Cookie不会被提交到域名www.zhihu.com去。这是由cookie的隐私安全机制决定的。隐私安全机制能够禁止网站非法获取其他网站的cookie。</a></p>
-<p>Path: cookie的路径，domain属性决定运行访问Cookie的域名，而path属性决定允许访问cookie的路径,一般情况下，cookie的path是”/“,也就是该域名下的所有路径均可使用，如果设定了特定的path，那么这个cookie只能在相应的路径下使用。</p>
-<p>Expires：cookie的过期时间，cookie在过期时间之内是持续有效的。也有永久cookie，除非手动清除，否则不会自动消失。</p>
-<p>Secure: cookie的安全属性，HTTP协议不仅是无状态的，而且是不安全的。使用HTTP协议的数据不经过任何加密就直接在网络上传播，有被截获的可能。使用HTTP协议传输很机密的内容是一种隐患。如果不希望Cookie在HTTP等非安全协议中传输，可以设置Cookie的secure属性为true。浏览器只会在HTTPS和SSL等安全协议中传输此类Cookie。</p>
-<p>cookie的分类：</p>
-<p>Cookie总是保存在客户端中，按在客户端中的存储位置，可分为内存Cookie和硬盘Cookie。</p>
-<p>内存Cookie由浏览器维护，保存在内存中，浏览器关闭后就消失了，其存在时间是短暂的。<br>硬盘Cookie保存在硬盘里，有一个过期时间，除非手动清理或到了过期时间，硬盘Cookie不会被删除，其存在时间是长期的。所以，按存在时间，可分为非持久Cookie和持久Cookie。</p>
-<p>cookie的弊端：</p>
-<pre><code>虽然cookie给开发者和用户带来了许多便利，但它不可避免地暴露了许多弊端
-1.Cookie会被附加在每个HTTP请求中，所以无形中增加了流量，给原本已经拥堵不堪的网络带来更大的负担。
-2.由于在HTTP请求中的Cookie是明文传递的，被拦截后拦截者可以直接使用。（除非用HTTPS）
-3.Cookie的大小限制在4KB左右。对于复杂的存储需求来说是不够用的
-</code></pre><p>The End.</p>
+<p>1.表连接</p>
+<p>通常需要同时获取多个表中的字段，可以用表连接实现。<br>表连接分 内连接 和 外连接 两种</p>
+<p>内连接：仅选出两张表中相互匹配的记录，不匹配的则不出现。</p>
+<p>外连接：<br>外连接又分左连接和右连接。</p>
+<pre><code>左连接：包含所有的左边表中的记录甚至是右边表中没有和它匹配的记录。(left join TABLE on …)
+右接接：包含所有的右边表中的记录甚至是左边表中没有和它匹配的记录。(right join TABLE on …)
+左右连接类似，二者可以相互转化。
+</code></pre><p>因此基于某些方面的考虑，我尽量使用外连接，因为如果使用内连接，有时可能因为某张数据表的某个字段尚未完善，导致无法查到整条记录。<br>2.存储过程与函数</p>
+<p>可以将一些复杂且常用的查询写成存储过程或函数，以简化开发者的工作，同时减少数据在数据库和应用服务器之间的传输。<br>存储过程于函数的区别在于函数必须有返回值，而存储过程没有，存储过程的参数可以使用IN, OUT, INOUT类型，而函数只能是IN类型。</p>
+<p>存储过程<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">创建：create procedure sp_name([pro_parmeter[,..]])</span><br><span class="line">[characteristic ..] routine_body;</span><br><span class="line">调用： call sp_name([parameter[,..]])</span><br><span class="line">查看：show procedure status, show create procedure sp_name\G</span><br></pre></td></tr></table></figure></p>
+<p>函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">创建：create function sp_name([func_parameter[,…])</span><br><span class="line">returns type</span><br><span class="line">[characteristic …] routine_body</span><br><span class="line">调用： select sp_name([parameter[,..]])</span><br><span class="line">查看：show function status, show create function sp_name\G</span><br></pre></td></tr></table></figure>
+<p>routine_body是SQL代码的内容，可以用BEGIN…END来表示SQL代码的开始和结束。<br>3.其他</p>
+<p>delimiter命令修改语句的结束符号<br>变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">定义：declare var_name[,…] type [default value]</span><br><span class="line">赋值：</span><br><span class="line">1.直接赋值：set var_name = expr[, var_name = expr]…</span><br><span class="line">2.也可以通过查询将结果赋值给变量，这要求查询返回的结果必须只有一行：select col_name[,…] into var_name[,…] table_expr;</span><br></pre></td></tr></table></figure></p>
+<p>流程控制：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">if语句：</span><br><span class="line"></span><br><span class="line">   if search_condition then statement_list</span><br><span class="line">     [else if search_condition  then statement_list]</span><br><span class="line">     [else statement_list]</span><br><span class="line">   end if</span><br><span class="line"></span><br><span class="line">   case 语句</span><br><span class="line"></span><br><span class="line">   case case_value </span><br><span class="line">     when when_value then statement_list</span><br><span class="line">     [when when_value then statement_list]...</span><br><span class="line">     [else statement_list]</span><br><span class="line">   end case</span><br><span class="line"></span><br><span class="line">   或者</span><br><span class="line"></span><br><span class="line">   case</span><br><span class="line">     when search_condition then statement_list</span><br><span class="line">     [when search_condition then statement_list]...</span><br><span class="line">     [else statement_list]</span><br><span class="line">   end case</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -340,13 +328,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/05/06/web开发-cookie探秘/">web开发--cookie探秘</a></p>
+        <p><span>本文标题:</span><a href="/2016/08/25/MySQL笔记/">MySQL笔记</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">siliconx</a></p>
-        <p><span>发布时间:</span>2016-05-06, 17:53:19</p>
-        <p><span>最后更新:</span>2018-03-16, 16:37:28</p>
+        <p><span>发布时间:</span>2016-08-25, 06:16:09</p>
+        <p><span>最后更新:</span>2018-03-16, 16:55:45</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/05/06/web开发-cookie探秘/" title="web开发--cookie探秘">http://blog.siliconx.xyz/2016/05/06/web开发-cookie探秘/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://blog.siliconx.xyz/2016/05/06/web开发-cookie探秘/　　作者: siliconx" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/08/25/MySQL笔记/" title="MySQL笔记">http://blog.siliconx.xyz/2016/08/25/MySQL笔记/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://blog.siliconx.xyz/2016/08/25/MySQL笔记/　　作者: siliconx" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -359,15 +347,15 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/05/13/Python胶水语言特性实现-调用C/">
-                    Python胶水语言特性实现(调用C)
+                <a href="/2016/09/06/docker笔记/">
+                    docker笔记
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/05/02/CPP入门之贪吃蛇/">
-                    C++入门之贪吃蛇
+                <a href="/2016/08/20/暑期流水账/">
+                    暑期流水账
                 </a>
             </div>
         
@@ -379,7 +367,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#web开发–cookie探秘"><span class="toc-number">1.</span> <span class="toc-text">web开发–cookie探秘</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL笔记"><span class="toc-number">1.</span> <span class="toc-text">MySQL笔记</span></a></li></ol>
         
     </div>
     <style>
@@ -415,7 +403,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"web开发--cookie探秘　| siliconx's blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"MySQL笔记　| siliconx's blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -449,7 +437,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/05/13/Python胶水语言特性实现-调用C/" title="上一篇: Python胶水语言特性实现(调用C)">
+            <a href="/2016/09/06/docker笔记/" title="上一篇: docker笔记">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -457,7 +445,7 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/05/02/CPP入门之贪吃蛇/" title="下一篇: C++入门之贪吃蛇">
+            <a href="/2016/08/20/暑期流水账/" title="下一篇: 暑期流水账">
                 <i class="fa fa-angle-right"></i>
             </a>
         
