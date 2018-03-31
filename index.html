@@ -185,7 +185,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C/C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Others/">Others</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Raspberry-Pi/">Raspberry Pi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C/C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hacker/">Hacker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Others/">Others</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Raspberry-Pi/">Raspberry Pi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a></li></ul>
                     </div>
                 </section>
                 
@@ -305,6 +305,129 @@
       
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Others/">Others</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-基于树莓派的魔镜制作" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/12/31/基于树莓派的魔镜制作/" class="article-date">
+      <time datetime="2017-12-31T01:46:46.000Z" itemprop="datePublished">2017-12-31</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/31/基于树莓派的魔镜制作/">基于树莓派的魔镜制作</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>用树莓派给女朋友DIY了一个”魔镜”。先看看镜子正面照:</p>
+<p><img src="https://pic2.zhimg.com/50/v2-ab8a9ff91b5ebe5857cbc9df05ee960a_hd.jpg" alt="img"></p>
+<p>显示最近三天的天气预报。下面的文字是随机出现的小情话。</p>
+<p>再看看镜子背面照:</p>
+<p><img src="https://pic2.zhimg.com/50/v2-7dae089924c23f8302aeda7783238f39_hd.jpg" alt="img"></p>
+<p>盒子里面放了一块装了kedei lcd显示屏的raspberry pi3 b。运行一个爬虫爬取天气信息，再通过网页表现出来。</p>
+<p>总体效果不错，女朋友很喜欢。</p>
+<p>具体制作过程有机会再写。</p>
+<p>=======================分割线===========================</p>
+<p>2017/12/31更</p>
+<p>知乎小透明收到好多赞，受宠若惊，谢谢大家！</p>
+<p>写一下具体的制作过程</p>
+<p>参考文章：<a href="http://www.freebuf.com/geek/97233.html" target="_blank" rel="noopener">极客DIY：简易安装魔镜大合集，总有一款适合你 - FreeBuf.COM | 关注黑客与极客</a></p>
+<p>I.主要原材料&amp;工具：</p>
+<p><img src="https://pic3.zhimg.com/50/v2-53dc3b16f69ba2892876db7ae955bcb0_hd.jpg" alt="img"></p>
+<p>1.轻触开关(当作树莓派关机键)</p>
+<p>2.电络铁+锡条(焊接轻触开关)</p>
+<p>3.母对母杜邦线两根(连接轻触开关和GPIO针脚)</p>
+<p>4.kedei lcd显示屏: <a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.fd3508fOFxmqY&amp;id=520169326426&amp;_u=v2es7i0f0ae6" target="_blank" rel="noopener">树莓派3代触摸屏幕3.5寸Raspberry PI3PI2/B+LCD显示屏器即插即用</a></p>
+<ul>
+<li>kedei显示屏驱动安装: <a href="http://blog.csdn.net/qq_37098948/article/details/78006331?locationNum=1&amp;fps=1" target="_blank" rel="noopener">树莓派（四）–3.5寸LCD触控屏驱动安装 - CSDN博客</a></li>
+<li>给这个店家打个广告，很好的店家，收到的第一块显示屏花屏了，应该是寄过来的时候弄坏了，店家二话没说又给我发了一块新的</li>
+</ul>
+<p>5.透视原子镜: <a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.fd3508fOFxmqY&amp;id=557444633543&amp;_u=v2es7i0ff439" target="_blank" rel="noopener">原子镜 单向透视玻璃 单面可视玻璃 广告镜 树莓派魔术镜小样包邮-淘宝网</a> – 我买的是100mm*150mm</p>
+<p>6.树莓派3B(OS: Raspbian)</p>
+<p>7.双面胶(粘显示屏和包装纸)， 502胶水(粘轻触开关)， 美工刀， 礼物包装纸(糊裱镜子背面)， 小盒子(装树莓派) etc.</p>
+<p>-————————————</p>
+<p>因为组装的时候比较着急，所以没来得及拍照，只能用文字描述一下。</p>
+<p>a.最好不要用双面胶粘显示屏，我也是粘上去才发现的，后悔已经来不及了，因为平时用的双面胶透明度不是很高，还有明显的纹理，当显示屏显示开机界面和桌面的时候会看到双面胶，所幸的是天气预报的背景是黑色的，不容易看到双面胶。所以最好用专门的胶水。</p>
+<p>b.装树莓派的小盒子可能找不到大小刚刚合适的，所以就需要自己动手切割好再用胶水粘回去，我用的小盒子是小米音响的包装盒(音响是女朋友送的 逃~)，大小相近，够结实。</p>
+<p>c.镜子背面和盒子用礼物包装纸贴上，一是为了美观，二是透视镜的背面一定要封住，不然照不了镜子。</p>
+<p>II.软件部分</p>
+<p>写代码折腾了比较久。</p>
+<p>最重要的一点是女朋友宿舍没装WiFi，获取天气预报数据要联网，还好学校宿舍都装了校园无线网(类似CMCC-EDU)，但是接上以后必须打开浏览器登陆才能访问外网，否则只能访问学校内网。为这个问题苦恼了很久，总不能让树莓派自己打开浏览器输入账号密码登陆WiFi。抱着试一试的心态在学校的各个网站看看有没有天气预报，巧的是还真被我在学校的门户系统里找到了，而且天气数据已经是JSON格式的，不需要解析html就能直接用。</p>
+<p>另外一直在纠结是用JavaFX写一个图形化应用还是用Python写一个天气爬虫部署成网络服务再用浏览器访问。</p>
+<p>为了减少工作量最开始决定用JavaFX写，因为只需要写一个应用，而客户-服务端模式要写Python和JS两部分。(其实最开始是想直接只写JS在浏览器上处理的，后来才想到有跨域问题)。</p>
+<p>当用JavaFX写好了爬虫和简单的界面后，想移植到树莓派上测试一下，编译的时候才发现，树莓派的JDK没有内置JavaFX, 然后又花了很大功夫换JDK，总算能跑起来了，但是还是有bug。卒。然后又用Python和JS重新写了一个。</p>
+<p>用JavaFX写的代码就不贴了，没写完整不好意思贴出来。</p>
+<p>贴一下Python和JS代码 – (只会一点点JS，轻喷)</p>
+<p><a href="https://github.com/siliconx/smart_mirror" target="_blank" rel="noopener">siliconx/smart_mirror  – github</a></p>
+<p>a.前端: JS + Jquery</p>
+<p>b.后端: Python + Flask</p>
+<p>c.一键关机脚本: Python</p>
+<hr>
+<p>天气图标是在 <a href="http://iconfont.cn/" target="_blank" rel="noopener">阿里巴巴矢量图标库</a> 找的。</p>
+<p>然后是天气预报下面的小情话，每次开机都会随机显示一条。</p>
+<p>写这个模块的目的主要是为了让女票每次打开魔镜都能有惊喜。</p>
+<p>情话传送门 – <a href="https://www.zhihu.com/question/19689722" target="_blank" rel="noopener">最好听的情话是什么？</a>; <a href="https://www.zhihu.com/question/54572013" target="_blank" rel="noopener">小语种情话？</a> </p>
+<p>还有一小部分是自己写的。</p>
+<p>把这些情话都收集整理好保存成一个json文件方便使用(static/words.json)</p>
+<p>关于一键关机脚本：</p>
+<p>树莓派最好不要直接拔电关机，否则容易丢数据，而且更重要的是直接拔电关机后，下次开机打开chrome后会弹出小窗口提示chrome未正确关闭，会遮挡住界面。而且装在镜子里的树莓派是不能操作的(不装鼠标键盘)，所以必须加一个关机按钮，然后写一点代码监听按钮。具体看代码shutdown.py</p>
+<p>最后是开机自启，需要启动三个程序</p>
+<p>1.Flask后端服务</p>
+<p>2.chromium(全屏运行)</p>
+<ul>
+<li>命令： chromium-browser –start-fullscreen –app=<a href="https://xxx" target="_blank" rel="noopener">https://xxx</a></li>
+</ul>
+<p>3.一键关机脚本</p>
+<ul>
+<li>关于开机自启: <a href="https://stackoverflow.com/questions/40481575/start-chromium-automatically-on-booting-the-pi3-with-raspbian-jessie" target="_blank" rel="noopener">Start automatically on booting the Pi3 with Raspbian JESSIE</a> </li>
+</ul>
+<p>以上</p>
+<p>谢谢大家！！！</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hacker/">Hacker</a></li></ul>
     </div>
 
       
@@ -859,71 +982,6 @@
       
         <p class="article-more-link">
           <a href="/2016/11/18/Redis数据类型及抽象概念/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-数据结构-二" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/11/17/数据结构-二/" class="article-date">
-      <time datetime="2016-11-17T07:23:44.000Z" itemprop="datePublished">2016-11-17</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/17/数据结构-二/">数据结构-二</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="表、栈、队列"><a href="#表、栈、队列" class="headerlink" title="表、栈、队列"></a>表、栈、队列</h2><h3 id="表-list"><a href="#表-list" class="headerlink" title="表(list)"></a>表(list)</h3><p>有由 A1,A2,…,AN 组成的表，表的大小为 N ，称 Ai−1 是 Ai 的前驱， Ai+1 是 Ai 的后继。大小为0的表为空表。</p>
-<p>表ADT上的操作常见的包括：插入、删除、索引、查找、清空、打印。这是些基本的操作，根据需要可以再添加。</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Data-Structure/">Data Structure</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2016/11/17/数据结构-二/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
